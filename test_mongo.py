@@ -1,10 +1,17 @@
 import eto_mongo as mg
 import json
+import parser_eto as par
+# from EW_preprocess_pkg import xml2json as pa
+
 
 
 path_usuariso = "./examples/1-usuarios.json"
 path_experimento = "./examples/2-banco_experimental.json"
+path_juncao = "./examples/3-juncoes.json"
 
+path_etoxml = "./examples/1e3z1h4.etoxml"
+path_video = "./examples/1e3z1h4.vxml"
+path_ras = "./examples/1e3z1h4.tkin"
 
 def get_arquivo(arquivo):
     with open(arquivo, 'r', encoding="utf-8") as f:
@@ -60,5 +67,36 @@ def test_get_experimento():
     print(ex)
 
 
+def test_create_juncao():
+    ex = mg.Experimento()
+    ex.get_by_hash("5ea0b45893f4d51de40e00cd")
+
+    distros_dict = get_arquivo(path_juncao)
+
+    jc = mg.Juncao()
+    jc.create_juncao(distros_dict,ex)
+
+    # f = open(path_video, "rb") 
+    # parser = pa.Parse_XML(f)
+    # men_json = parser.get_data()
+
+def test_update_juncao():
+    doc = par.parser_xml_file_2_dict(path_video)
+    jc = mg.Juncao()
+    jc.get_by_hash("5ea0ced093f4d50fb413c089").update_video(doc)
+    
+
+
+def test_update_juncao_tudo():
+    doc_video = par.parser_xml_file_2_dict(path_video)
+    doc_eto = par.parser_xml_file_2_dict(path_etoxml)
+    doc_ras = par.parser_xml_file_2_dict(path_ras)
+    jc = mg.Juncao()
+    jc.get_by_hash("5ea0ced093f4d50fb413c089").update_video(doc_video).update_eto(doc_eto).update_tra(doc_ras)
+    
+    # men_json = json.dumps(doc)
+    # # men_json = get_arquivo(path_usuariso)
+    # jc = mg.Juncao()
+    # jc.create_juncao(doc,ex)
 # def test_liga_banco():
 #     mongo_client = MongoClient('localhost', 27017)

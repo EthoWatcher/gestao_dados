@@ -18,6 +18,9 @@ class Cliente():
 
     def get_col(self):
         return self.col
+    
+    def get_by_objid(self, objid):
+         self.data = self.col.find_one({"_id": objid})
 
     def get_by_hash(self, hashe):
         self.data = self.col.find_one({"_id": hash2objectid(hashe)})
@@ -27,15 +30,15 @@ class Cliente():
         self.data = self.col.find_one({"_id": post_id})
 
     def up_file(self, campos_atualiza):
-        self.col.update_one({'_id': self.data["_id"]}, { "$set":campos_atualiza})
-        return self.get_by_hash(str(self.data["_id"]))
+        r_deu = self.col.update_one({'_id': self.data["_id"]}, { "$set":campos_atualiza})
+        self.get_by_hash(str(self.data["_id"]))
+        return r_deu
 
     def del_file(self):
         self.col.delete_one({"_id": self.data["_id"]})
         self.data = {}
 
         
-
 
 class Usuario():
     def __init__(self):
@@ -95,9 +98,8 @@ class Juncao():
     def __init__(self):
         self.cliente = Cliente(colecao="Juncoes")
 
-
     def create_juncao(self, men_json, experimento):
-        men_json["id_experimento"] = experimento.data["_id"]
+        men_json["id_experimento"] = experimento.cliente.data["_id"]
         self.cliente.crete_file(men_json)
         return self
 
@@ -105,60 +107,111 @@ class Juncao():
         self.cliente.get_by_hash(hashe)
         return self
 
+    # Dar uma limpada nesses métodos porque eles são muito parecido.
     def update_video(self, json_mensagem):
         vi = Video()
-        r_video_vazio = self.data["id_video"] == ""
+        r_video_vazio = self.cliente.data["id_video"] == ""
         if(r_video_vazio):
             vi.create_video(json_mensagem)
         else:
-            vi.get_by_hash(self.data["id_video"]).delete_video()
+            vi.get_by_hash(self.cliente.data["id_video"]).delete_video()
             vi.create_video(json_mensagem)
             
-        self.data["id_video"]= vi.data["_id"]
-        self._atualiza_db(self.data)
-        
-    
-        # self.atualiza_db()
+        self.cliente.data["id_video"]= vi.cliente.data["_id"]
+        self._atualiza_db(self.cliente.data)
+        return self
 
-    def update_eto(self):
-        pass
 
-    def update_tra(self):
-        pass
+    def update_eto(self, json_mensagem):
+        eto = Etografia()
+        r_eto_vazia = self.cliente.data["id_eto"] == ""
+        if(r_eto_vazia):
+            eto.create_eto(json_mensagem)
+        else:
+            eto.get_by_hash(self.cliente.data["id_eto"]).delete_etografia()
+            eto.create_eto(json_mensagem)
+            
+        self.cliente.data["id_eto"]= eto.cliente.data["_id"]
+        self._atualiza_db(self.cliente.data)
+        return self
+
+
+    def update_tra(self, json_mensagem):
+        tra = Rastreamento()
+        r_tra_vazia = self.cliente.data["id_tra"] == ""
+        if(r_tra_vazia):
+            tra.create_ras(json_mensagem)
+        else:
+            tra.get_by_hash(self.cliente.data["id_tra"]).delete_rastreamento()
+            tra.create_ras(json_mensagem)
+            
+        self.cliente.data["id_tra"]= tra.cliente.data["_id"]
+        self._atualiza_db(self.cliente.data)
+        return self
 
     def _atualiza_db(self, campos_atualiza):
-        _id =  self.data["_id"]
-
-        r_atualizo = self.col.update_one({'_id': _id}, { "$set":campos_atualiza})
-
+        r_atualizo = self.cliente.up_file(campos_atualiza)
         if r_atualizo:
             return True
         else:
-            self.data = self.col.find_one({"_id": self.data["_id"]})
             return False
 
 
-
-        
-
+# arrumar para gravar o vídeo tbm
 class Video():
     def __init__(self):
-        self.client_usuarios = Cliente(colecao="Video")
-        self.col = self.client_usuarios.get_col()
-        self.data = {}
-    
+        self.cliente = Cliente(colecao="Video")
+
+
     def create_video(self, json_mensagem):
-        pass
-        # pass
+        self.cliente.crete_file(json_mensagem)
+        return self
+  
+
     def get_by_hash(self, objID):
-        pass
+        self.cliente.get_by_objid(objID)
+        return self
+
 
     def delete_video(self):
-       pass 
+       self.cliente.del_file()
+       return self
         
         # pass
-# class Etografia():
-#     pass
+class Etografia():
+    def __init__(self):
+        self.cliente = Cliente(colecao="Etografia")
 
-# class Rastreamento():
-#     pass
+
+    def create_eto(self, json_mensagem):
+        self.cliente.crete_file(json_mensagem)
+        return self
+  
+
+    def get_by_hash(self, objID):
+        self.cliente.get_by_objid(objID)
+        return self
+
+
+    def delete_etografia(self):
+       self.cliente.del_file()
+       return self
+
+class Rastreamento():
+    def __init__(self):
+        self.cliente = Cliente(colecao="Rastreamento")
+
+
+    def create_ras(self, json_mensagem):
+        self.cliente.crete_file(json_mensagem)
+        return self
+  
+
+    def get_by_hash(self, objID):
+        self.cliente.get_by_objid(objID)
+        return self
+
+
+    def delete_rastreamento(self):
+       self.cliente.del_file()
+       return self
