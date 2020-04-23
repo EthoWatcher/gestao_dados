@@ -122,6 +122,10 @@ class Juncao():
     def get_by_hash(self, hashe):
         self.cliente.get_by_hash(hashe)
         return self
+    
+    def update_var_inde(self, array_var_inde):
+        self._atualiza_db({"var_inde": array_var_inde})
+        return self
 
     # Dar uma limpada nesses métodos porque eles são muito parecido.
     def update_video(self, json_mensagem):

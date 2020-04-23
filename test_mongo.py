@@ -53,10 +53,10 @@ def test_curiosidade():
     us = mg.Usuario()
     us.get_by_hash("5ea09ee693f4d54eac22fb05").atualiza({"nome": "rei dos 2"})
 
-# Cria experimento ObjectId("5ea0dc2f93f4d51f103cabb8")
+# Cria experimento ObjectId("5ea1a77193f4d56a842f3a67")
 def test_create_experimento():
     us = mg.Usuario()
-    us = us.get_by_hash("5ea0dc2f93f4d51f103cabb8")
+    us = us.get_by_hash("5ea1a77193f4d56a842f3a67")
     ex = mg.Experimento()
     distros_dict = get_arquivo(path_experimento)
     ex.create_experimento(distros_dict,us)
