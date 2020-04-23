@@ -54,7 +54,6 @@ def test_curiosidade():
     us.get_by_hash("5ea09ee693f4d54eac22fb05").atualiza({"nome": "rei dos 2"})
 
 # Cria experimento ObjectId("5ea0dc2f93f4d51f103cabb8")
-
 def test_create_experimento():
     us = mg.Usuario()
     us = us.get_by_hash("5ea0dc2f93f4d51f103cabb8")
