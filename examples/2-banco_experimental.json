@@ -4,7 +4,8 @@
         "nome_banco_experimental":"fluoxetina_gian",
         "var_inde":[
             {"nome":"rato","categorias":["macho" ,"femea"]},
-            {"nome":"dosagem","categorias":["veiculo", "flx1mg","flx2.5mg","flx5mg"]}
+            {"nome":"dosagem","categorias":["veiculo", "flx1mg","flx2.5mg","flx5mg"]},
+            {"nome":"unidade","categorias":["A1", "A2","A3","A4","A5","A6","A7","A8","A9"]}
         ],
         "var_depend":[
             {"nome":"categoria_comportamental","categorias":["Swimming","Immobility", "Climbing", "Diving", "Headshaking", "Undefined"]}
