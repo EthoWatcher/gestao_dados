@@ -85,7 +85,7 @@ class Experimento():
         # return self
 
     def create_experimento(self, men_json, user):
-        men_json["id_experimento"] = user.cliente.data["_id"]
+        men_json["id_usuario"] = user.cliente.data["_id"]
         self.cliente.crete_file(men_json)
         return self
     
@@ -103,6 +103,8 @@ class Experimento():
         for documento in cursor:
             c = Juncao()
             c.get_by_hash(str(documento["_id"])).deleta()
+        
+        self.cliente.del_file()
     # deletar experimentos que deletar as junções.
         
 

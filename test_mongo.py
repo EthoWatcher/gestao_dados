@@ -53,10 +53,11 @@ def test_curiosidade():
     us = mg.Usuario()
     us.get_by_hash("5ea09ee693f4d54eac22fb05").atualiza({"nome": "rei dos 2"})
 
+# Cria experimento ObjectId("5ea0dc2f93f4d51f103cabb8")
 
 def test_create_experimento():
     us = mg.Usuario()
-    us = us.get_by_hash("5ea09ee693f4d54eac22fb05")
+    us = us.get_by_hash("5ea0dc2f93f4d51f103cabb8")
     ex = mg.Experimento()
     distros_dict = get_arquivo(path_experimento)
     ex.create_experimento(distros_dict,us)
@@ -66,10 +67,10 @@ def test_get_experimento():
     ex.get_by_hash("5ea0b45893f4d51de40e00cd")
     print(ex)
 
-
+# create juncao ObjectId("5ea0dc9393f4d55b9813bc02")
 def test_create_juncao():
     ex = mg.Experimento()
-    ex.get_by_hash("5ea0b45893f4d51de40e00cd")
+    ex.get_by_hash("5ea0dc9393f4d55b9813bc02")
 
     distros_dict = get_arquivo(path_juncao)
 
@@ -86,13 +87,13 @@ def test_update_juncao():
     jc.get_by_hash("5ea0d73393f4d55e28a9240a").update_video(doc)
     
 
-
+# ObjectId("5ea0dcc993f4d5424809f73f")
 def test_update_juncao_tudo():
     doc_video = par.parser_xml_file_2_dict(path_video)
     doc_eto = par.parser_xml_file_2_dict(path_etoxml)
     doc_ras = par.parser_xml_file_2_dict(path_ras)
     jc = mg.Juncao()
-    jc.get_by_hash("5ea0d73393f4d55e28a9240a").update_video(doc_video).update_eto(doc_eto).update_tra(doc_ras)
+    jc.get_by_hash("5ea0dcc993f4d5424809f73f").update_video(doc_video).update_eto(doc_eto).update_tra(doc_ras)
 
 
 def test_deleta_juncao():
@@ -107,9 +108,10 @@ def test_deleta_experimento():
     ex.get_by_hash("5ea0b45893f4d51de40e00cd").deleta()
 
 
+# deleta usaurio ObjectId("5ea0dc2f93f4d51f103cabb8")
 def test_deleta_usuario():
     us = mg.Usuario()
-    us.get_by_hash("5ea09ee693f4d54eac22fb05").deleta()
+    us.get_by_hash("5ea0dc2f93f4d51f103cabb8").deleta()
 
 
     # men_json = json.dumps(doc)
