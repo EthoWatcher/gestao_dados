@@ -11,7 +11,7 @@ def objectid_to_hash(obj):
 
 class Cliente():
     def __init__(self, colecao="teste", bd="ethowatcher", ip="localhost", porta=27017):
-        self.mongo_client = MongoClient(ip, 27017)
+        self.mongo_client = MongoClient(ip, porta)
         self.db = self.mongo_client[bd]
         self.col = self.db[colecao]
         self.data = {}
@@ -61,6 +61,14 @@ class Usuario():
         self.cliente.up_file(campos_atualiza)
         return self
 
+    def deleta(self):
+        c = Cliente(colecao="Experimento")
+        cursor = c.col.find({"id_usuario": self.cliente.data["_id"]})
+        for documento in cursor:
+            c = Experimento()
+            c.get_by_hash(str(documento["_id"])).deleta()
+
+        self.cliente.del_file()
     # deletar usuario tem que deletar experimento e juncoões.
     # def deleta_usuario(self):
     #     """
@@ -88,7 +96,13 @@ class Experimento():
     def atualiza(self, campos_atualiza):
         self.cliente.up_file(campos_atualiza)
         return self
-
+    
+    def deleta(self):
+        c = Cliente(colecao="Juncoes")
+        cursor = c.col.find({"id_experimento": self.cliente.data["_id"]})
+        for documento in cursor:
+            c = Juncao()
+            c.get_by_hash(str(documento["_id"])).deleta()
     # deletar experimentos que deletar as junções.
         
 
@@ -155,6 +169,27 @@ class Juncao():
             return True
         else:
             return False
+
+    def deleta(self):
+        data = self.cliente.data
+        r_e_video = data["id_video"] != ""
+        r_e_eto = data["id_eto"] != ""
+        r_e_tra = data["id_tra"] != ""
+        if(r_e_video):
+            vi = Video()
+            vi.get_by_hash(data["id_video"]).delete_video()
+        
+        if(r_e_eto):
+            eto = Etografia()
+            eto.get_by_hash(data["id_eto"]).delete_etografia()
+        
+        if(r_e_tra):
+            tra = Rastreamento()
+            tra.get_by_hash(data["id_tra"]).delete_rastreamento()
+        
+        self.cliente.del_file()
+
+
 
 
 # arrumar para gravar o vídeo tbm

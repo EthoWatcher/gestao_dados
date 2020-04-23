@@ -83,7 +83,7 @@ def test_create_juncao():
 def test_update_juncao():
     doc = par.parser_xml_file_2_dict(path_video)
     jc = mg.Juncao()
-    jc.get_by_hash("5ea0ced093f4d50fb413c089").update_video(doc)
+    jc.get_by_hash("5ea0d73393f4d55e28a9240a").update_video(doc)
     
 
 
@@ -92,8 +92,26 @@ def test_update_juncao_tudo():
     doc_eto = par.parser_xml_file_2_dict(path_etoxml)
     doc_ras = par.parser_xml_file_2_dict(path_ras)
     jc = mg.Juncao()
-    jc.get_by_hash("5ea0ced093f4d50fb413c089").update_video(doc_video).update_eto(doc_eto).update_tra(doc_ras)
-    
+    jc.get_by_hash("5ea0d73393f4d55e28a9240a").update_video(doc_video).update_eto(doc_eto).update_tra(doc_ras)
+
+
+def test_deleta_juncao():
+    jc = mg.Juncao() 
+    jc.get_by_hash("5ea0d73393f4d55e28a9240a").deleta() 
+
+
+
+
+def test_deleta_experimento():
+    ex = mg.Experimento()
+    ex.get_by_hash("5ea0b45893f4d51de40e00cd").deleta()
+
+
+def test_deleta_usuario():
+    us = mg.Usuario()
+    us.get_by_hash("5ea09ee693f4d54eac22fb05").deleta()
+
+
     # men_json = json.dumps(doc)
     # # men_json = get_arquivo(path_usuariso)
     # jc = mg.Juncao()
