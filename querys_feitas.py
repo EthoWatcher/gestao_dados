@@ -11,7 +11,7 @@ class Transforma_Estrutura_Dados_Panda():
         self.df = self._constroi_data_frame()
 
     def _constroi_data_frame(self):
-        df = pd.DataFrame(self.dic)
+        df = pd.DataFrame(self.dic_pandas)
         return df
 
 
