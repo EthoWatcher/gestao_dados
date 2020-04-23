@@ -4,7 +4,7 @@ from collections import OrderedDict
 import pandas as pd 
 
 class Transforma_Estrutura_Dados_Panda():
-    def __init__(self,data_descritores):
+    def __init__(self, data_descritores):
         self.data_descritores = data_descritores
         self.keys = self._get_keys()
         self.dic_pandas = self._motor()
@@ -78,6 +78,10 @@ class Get_CSV():
         pass
 
 
+class Constru_descritor_juncao():
+    def __init__(self, lis_des_juncao):
+        self = lis_des_juncao
+
 # menor string tem que morfa maior
 
 class Constru_descritor_experimental():
@@ -128,9 +132,6 @@ class Constru_descritor_experimental():
 
 
             
-            
-
-
 
 class Get_Juncoes():
     def __init__(self, query):
