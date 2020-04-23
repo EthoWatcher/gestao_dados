@@ -1,5 +1,31 @@
 class Descritor:
-    pass
+    def __init__(self, etografia, categoria):
+        self.eto = etografia
+        self.cat = categoria
+        self.resultado = None
+
+    def get_resultado(self):
+        return self.resultado
+
+class Descritor_duracao_experimento(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'd_total_experimento':self._calcula(), "info":f'Duração do experimento (s)'}
+
+    def _calcula(self):
+        dura =  self.eto.dados_videos["frameFinal"] - self.eto.dados_videos["frameProces"]
+        dura = dura/self.eto.dados_videos["fps"]
+        return dura
+
+
+# class Descritor_trecho(Descritor):
+#     def __init__(self, etografia, categoria):
+#         super().__init__(etografia, categoria)
+#         self.resultado = {f'trecho_e_{self.cat}_s':self._calcula(), "info":f'Duração do comportamento {self.cat} no experimento (s)'}
+
+#     def _calcula(self):
+#         return 
+
 
 # calcula em segundos a duração do experimento
 class Descritor_duracao_expe_cate():

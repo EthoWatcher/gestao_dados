@@ -38,6 +38,10 @@ class Cliente():
         self.col.delete_one({"_id": self.data["_id"]})
         self.data = {}
 
+    def query(self, query_dic):
+        cursor = self.col.find(query_dic)
+        return cursor
+
         
 
 class Usuario():
