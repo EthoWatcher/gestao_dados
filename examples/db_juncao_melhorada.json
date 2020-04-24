@@ -3,438 +3,545 @@
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\a56z74b7.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\a56z74b7.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\a56z74b7.tkin",
-        "sexo": "femea",
-        "dosagem": "flx5mg", 
-        "unidade": "A1"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx5mg", 
+            "unidade": "A1"
+        }
+        
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\23a4z9c.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\23a4z9c.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\23a4z9c.tkin",
-        "sexo": "femea",
-        "dosagem": "flx5mg", 
-        "unidade": "A2"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx5mg", 
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\33a4z20d.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\33a4z20d.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\33a4z20d.tkin",
-        "sexo": "femea",
-        "dosagem": "flx5mg", 
-        "unidade": "A3"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx5mg", 
+            "unidade": "A3"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\31a39z00f.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\31a39z00f.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\31a39z00f.tkin",
-        "sexo": "femea",
-        "dosagem": "flx5mg", 
-        "unidade": "A4"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx5mg", 
+            "unidade": "A4"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\8a76z88g0.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\8a76z88g0.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\8a76z88g0.tkin",
-        "sexo": "femea",
-        "dosagem": "flx5mg",
-        "unidade": "A5"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx5mg",
+            "unidade": "A5"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\43a5z36h.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\43a5z36h.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\43a5z36h.tkin",
-        "sexo": "femea",
-        "dosagem": "flx5mg",
-        "unidade": "A6"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx5mg",
+            "unidade": "A6"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\a45z6i77.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\a45z6i77.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\a45z6i77.tkin",
-        "sexo": "femea",
-        "dosagem": "flx5mg",
-        "unidade": "A7"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx5mg",
+            "unidade": "A7"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\5a66z7j7.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\5a66z7j7.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\5a66z7j7.tkin",
-        "sexo": "femea",
-        "dosagem": "flx5mg", 
-        "unidade": "A8"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx5mg", 
+            "unidade": "A8"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\1e4hb4.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\1e4hb4.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\1e4hb4.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A1"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A1"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\2e3hc5.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\2e3hc5.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\2e3hc5.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A2"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\2e3hc5bis4.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\2e3hc5bis4.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\2e3hc5bis4.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A2"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\52e03hc52a.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\52e03hc52a.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\52e03hc52a.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A2"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\22e31hc25b.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\22e31hc25b.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\22e31hc25b.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A2"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\3eh3d23.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\3eh3d23.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\3eh3d23.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A3"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A3"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\4e6hf2.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\4e6hf2.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\4e6hf2.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A4"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A4"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\5eh7g8.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\5eh7g8.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\5eh7g8.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A5"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A5"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\6e5h4h6.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\6e5h4h6.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\6e5h4h6.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A6"
+        "var_ind":{    
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A6"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\6e5h4h6bis4.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\6e5h4h6bis4.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\6e5h4h6bis4.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A6"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A6"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\7e5h4h6a.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\7e5h4h6a.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\7e5h4h6a.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A6"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A6"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\9e5h4h6b.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\9e5h4h6b.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\9e5h4h6b.tkin",
-        "sexo": "macho",
-        "dosagem": "flx2.5mg",
-        "unidade": "A6"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx2.5mg",
+            "unidade": "A6"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\7e3z1b2.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\7e3z1b2.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\7e3z1b2.tkin",
-        "sexo": "femea",
-        "dosagem": "flx2.5mg",
-        "unidade": "A1"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx2.5mg",
+            "unidade": "A1"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\8e8z9c.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\8e8z9c.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\8e8z9c.tkin",
-        "sexo": "femea",
-        "dosagem": "flx2.5mg",
-        "unidade": "A2"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx2.5mg",
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\9ez5d9.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\9ez5d9.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\9ez5d9.tkin",
-        "sexo": "femea",
-        "dosagem": "flx2.5mg",
-        "unidade": "A3"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx2.5mg",
+            "unidade": "A3"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\7e3z5f1.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\7e3z5f1.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\7e3z5f1.tkin",
-        "sexo": "femea",
-        "dosagem": "flx2.5mg",
-        "unidade": "A4"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx2.5mg",
+            "unidade": "A4"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\e1z1g1.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\e1z1g1.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\e1z1g1.tkin",
-        "sexo": "femea",
-        "dosagem": "flx2.5mg",
-        "unidade": "A5"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx2.5mg",
+            "unidade": "A5"
+        }
     },
     
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\1e3z1h4.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\1e3z1h4.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\1e3z1h4.tkin",
-        "sexo": "femea",
-        "dosagem": "flx2.5mg",
-        "unidade": "A6"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx2.5mg",
+            "unidade": "A6"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\4e3z2i.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\4e3z2i.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\4e3z2i.tkin",
-        "sexo": "femea",
-        "dosagem": "flx2.5mg",
-        "unidade": "A7"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx2.5mg",
+            "unidade": "A7"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\7e1z9j.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\7e1z9j.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\7e1z9j.tkin",
-        "sexo": "femea",
-        "dosagem": "flx2.5mg",
-        "unidade": "A8"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "flx2.5mg",
+            "unidade": "A8"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\2oh6b8.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\2oh6b8.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\2oh6b8.tkin",
-        "sexo": "macho",
-        "dosagem": "veiculo",
-        "unidade": "A1"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "veiculo",
+            "unidade": "A1"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\8o6hc5.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\8o6hc5.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\8o6hc5.tkin",
-        "sexo": "macho",
-        "dosagem": "veiculo",
-        "unidade": "A2"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "veiculo",
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\1oh5d5.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\1oh5d5.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\1oh5d5.tkin",
-        "sexo": "macho",
-        "dosagem": "veiculo",
-        "unidade": "A3"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "veiculo",
+            "unidade": "A3"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\3o8hf5.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\3o8hf5.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\3o8hf5.tkin",
-        "sexo": "macho",
-        "dosagem": "veiculo",
-        "unidade": "A4"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "veiculo",
+            "unidade": "A4"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\3oh8g9.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\3oh8g9.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\3oh8g9.tkin",
-        "sexo": "macho",
-        "dosagem": "veiculo",
-        "unidade": "A5"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "veiculo",
+            "unidade": "A5"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\5oh7h6.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\5oh7h6.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\5oh7h6.tkin",
-        "sexo": "macho",
-        "dosagem": "veiculo",
-        "unidade": "A6"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "veiculo",
+            "unidade": "A6"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\5o6zb7.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\5o6zb7.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\5o6zb7.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo",
-        "unidade": "A1"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo",
+            "unidade": "A1"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\1o5z6c.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\1o5z6c.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\1o5z6c.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo",
-        "unidade": "A2"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo",
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\7o7z2d99.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\7o7z2d99.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\7o7z2d99.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo",
-        "unidade": "A3"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo",
+            "unidade": "A3"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\3o3z4f.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\3o3z4f.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\3o3z4f.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo",
-        "unidade": "A4"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo",
+            "unidade": "A4"
+        }
 
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\3o5z8g2.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\3o5z8g2.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\3o5z8g2.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo",
-        "unidade": "A5"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo",
+            "unidade": "A5"
+        }
     },
     
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\2o3zh5.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\2o3zh5.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\2o3zh5.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo",
-        "unidade": "A6"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo",
+            "unidade": "A6"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\33o6z89i.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\33o6z89i.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\33o6z89i.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo",
-         "unidade": "A7"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo",
+            "unidade": "A7"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\o22z1j5.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\o22z1j5.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\o22z1j5.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo",
-         "unidade": "A8"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo",
+            "unidade": "A8"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\2o44z7k.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\2o44z7k.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\2o44z7k.tkin",
-        "sexo": "femea",
-        "dosagem": "veiculo", 
-        "unidade": "A9"
+        "var_ind":{
+            "sexo": "femea",
+            "dosagem": "veiculo", 
+            "unidade": "A9"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\4u55z7b8.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\4u55z7b8.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\4u55z7b8.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg", 
-        "unidade": "A1"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg", 
+            "unidade": "A1"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\u34z6c78.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\u34z6c78.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\u34z6c78.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg",
-         "unidade": "A2"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg",
+            "unidade": "A2"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\2u991z56d4.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\2u991z56d4.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\2u991z56d4.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg", 
-        "unidade": "A3"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg", 
+            "unidade": "A3"
+        }
     },
    
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\2u45z78f1.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\2u45z78f1.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\2u45z78f1.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg", 
-        "unidade": "A4"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg", 
+            "unidade": "A4"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\u35z7g88.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\u35z7g88.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\u35z7g88.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg",
-        "unidade": "A5"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg",
+            "unidade": "A5"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\8u5z17g93a.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\8u5z17g93a.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\8u5z17g93a.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg",
-        "unidade": "A5"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg",
+            "unidade": "A5"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\8u3z76g8b4.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\8u3z76g8b4.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\8u3z76g8b4.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg",
-        "unidade": "A5"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg",
+            "unidade": "A5"
+        }
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\37u7z89h7.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\37u7z89h7.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\37u7z89h7.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg", 
-        "unidade": "A6"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg", 
+            "unidade": "A6"
+        }
     },
 
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\1u23z47i.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\1u23z47i.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\1u23z47i.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg",
-        "unidade": "A7"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg",
+            "unidade": "A7"}
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\u59z0j14.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\u59z0j14.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\u59z0j14.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg",
-        "unidade": "A8"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg",
+            "unidade": "A8"}
     },
     {"id_experimento":"",
         "id_video":"C:\\Mestrado Oficial Marino\\Videos cegados\\Calibrados\\30u33z61k.vxml",
         "id_eto":"C:\\Mestrado Oficial Marino\\Videos cegados\\Etografias\\30u33z61k.etoxml",
         "id_tra":"C:\\Mestrado Oficial Marino\\Videos cegados\\Tracking\\30u33z61k.tkin",
-        "sexo": "macho",
-        "dosagem": "flx1mg",
-        "unidade": "A9"
+        "var_ind":{
+            "sexo": "macho",
+            "dosagem": "flx1mg",
+            "unidade": "A9"
+        }
     }
     
  
