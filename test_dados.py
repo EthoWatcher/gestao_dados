@@ -4,6 +4,7 @@ import json
 
 path_eto = "./examples/eto_conver_.json"
 path_junca_teste = "./examples/juncao_teste.json"
+path_trak = "./examples/rastreamento.json"
 
 def get_arquivo(arquivo):
     with open(arquivo, 'r', encoding="utf-8") as f:
@@ -73,3 +74,10 @@ def test_descritor_nome_etografia():
     de = et_d.Descritores_nome_categoria_etografia(e,"")
     de1 = et_d.Descritores_q_inicio_categoria_etografia(e,"")
     print(de.resultado)
+
+
+def test_dados_rastreamento():
+    dic = get_arquivo(path_trak)
+    e = et_d.Rastreamento(dic)
+    print(e)
+    

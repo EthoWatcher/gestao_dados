@@ -183,6 +183,51 @@ class Descritor_frequencia_expe_cate():
     def get_resultado(self):
         return self.resultado
 
+class Rastreamento:
+    def __init__(self, data):
+        self.data = data
+        self.anotacao_ras = self.data["analiseProcessaImage"]["dadosAnalise"]["anaProceImagem"]["area"]["proce"]
+        self.escala = float(self.data["analiseProcessaImage"]["dadosVideoAnalisado"]["escala"])
+        self.fps = float(self.data["analiseProcessaImage"]["dadosVideoAnalisado"]["fps"])
+        self.parser_rastreamento()
+        self._arrumando_escala()
+
+    def _arrumando_escala(self):
+        
+        for anotacao in self.anotacao_ras:
+            # a escala ficar em cm por s
+            anotacao["@Vd"] = anotacao["@Vd"]  * 1/self.escala * self.fps
+            # convertendo para cm (tem que conferir)
+            anotacao["@Valt"] = anotacao["@Valt"]  * 1/self.escala
+            anotacao["@Vlar"] = anotacao["@Vlar"]  * 1/self.escala
+
+            # convertendo para cm}{{2
+            anotacao["@Var"] = anotacao["@Var"]  * 1/self.escala * 1/self.escala
+
+            
+
+    def parser_rastreamento(self):
+        for anotacao in self.anotacao_ras:
+            anotacao["@f"] = int(anotacao["@f"])
+            anotacao["@arP"] = float(anotacao["@arP"])
+            anotacao["@arM"] = float(anotacao["@arM"])
+            anotacao["@ceX"] = float(anotacao["@ceX"])
+            anotacao["@ceY"] = float(anotacao["@ceY"])
+            anotacao["@altP"] = float(anotacao["@altP"])
+            anotacao["@altM"] = float(anotacao["@altM"])
+            anotacao["@larP"] = float(anotacao["@larP"])
+            anotacao["@larM"] = float(anotacao["@larM"])
+            anotacao["@an"] = float(anotacao["@an"])
+
+
+            anotacao["@Var"] = float(anotacao["@Valt"])
+            anotacao["@Vd"] = float(anotacao["@Valt"])
+            anotacao["@Valt"] = float(anotacao["@Valt"])
+            anotacao["@Vlar"] = float(anotacao["@Valt"])
+            anotacao["@Van"] = float(anotacao["@Valt"])
+
+
+
 
 
 class Etografia:
