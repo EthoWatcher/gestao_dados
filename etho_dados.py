@@ -17,6 +17,20 @@ class Descritor_duracao_experimento(Descritor):
         dura = dura/self.eto.dados_videos["fps"]
         return dura
 
+class Descritor_Juncao_experimento(Descritor):
+    def __init__(self, junca_data, categoria):
+        super().__init__(junca_data, categoria)
+        self.resultado = {f'{categoria}':self._calcula(), "info":f'variavel independente'}
+
+    def _calcula(self):
+        r_tem_no_dic = self.cat in self.eto["var_ind"]
+        if r_tem_no_dic:
+            return self.eto["var_ind"][self.cat]
+        else:
+            return ""
+
+
+        
 
 # class Descritor_trecho(Descritor):
 #     def __init__(self, etografia, categoria):

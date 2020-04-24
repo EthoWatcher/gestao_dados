@@ -9,6 +9,9 @@ class Transforma_Estrutura_Dados_Panda():
         self.keys = self._get_keys()
         self.dic_pandas = self._motor()
         self.df = self._constroi_data_frame()
+    
+    def get_df(self):
+        return self.df
 
     def _constroi_data_frame(self):
         df = pd.DataFrame(self.dic_pandas)
@@ -78,12 +81,45 @@ class Get_CSV():
         pass
 
 
+
+
+
 class Constru_descritor_juncao():
+    # lis_de_juncao = ["sexo", "dosagem", "unidade"]
     def __init__(self, lis_des_juncao):
-        self = lis_des_juncao
+        self.lis_de_juncao = lis_des_juncao
+
+    def get_descritor(self, l_juncao):
+        descritores_pegados = []
+        for juncao in l_juncao:   
+            descritores = self._get_descritores(juncao)
+
+            descritores.append({
+                "id_j": str(juncao["_id"]),
+                'info' : "Identificador unico da juncao"
+            })
+            descritores_pegados.append(descritores)
+        return descritores_pegados
+
+    def _get_proces(self, juncao, categoria):
+        return et_d.Descritor_Juncao_experimento(juncao, categoria)
+        
+
+    # l uniao juncao
+    def _get_descritores(self, juncao):
+        li = []
+        for descritor in self.lis_de_juncao:
+            d = self._get_proces(juncao, descritor)
+            
+            li.append(d.resultado)
+        
+        return li
+
+    
+
+
 
 # menor string tem que morfa maior
-
 class Constru_descritor_experimental():
     def __init__(self, li_str_descritores, li_str_cate):
         self.li_str_descritores= li_str_descritores

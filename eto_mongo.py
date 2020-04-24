@@ -128,7 +128,7 @@ class Juncao():
         return self
     
     def update_var_inde(self, array_var_inde):
-        self._atualiza_db({"var_inde": array_var_inde})
+        self._atualiza_db({"var_ind": array_var_inde})
         return self
 
     # Dar uma limpada nesses métodos porque eles são muito parecido.

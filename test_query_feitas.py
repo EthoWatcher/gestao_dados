@@ -5,14 +5,18 @@ import etho_dados as et_d
 import pandas as pd 
 
 def test_fazer_querys():
-    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, {"var_inde": { "$all": ["macho","flx2.5mg"]}}]}
+    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
+                        {"var_ind.sexo":"macho"},
+                        {"var_ind.dosagem": "flx2.5mg"}]}
     j = qf.Get_Juncoes(dict_query)
     cursor = j.get_cursor()
     l = len(list(cursor))   
     print(l)
 
 def test_query_get_etografia():
-    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, {"var_inde": { "$all": ["macho","flx2.5mg"]}}]}
+    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
+                        {"var_ind.sexo":"macho"},
+                        {"var_ind.dosagem": "flx2.5mg"}]}
     j = qf.Get_Juncoes(dict_query)
     cursor = j.get_cursor()
 
@@ -26,7 +30,9 @@ def test_query_get_etografia():
 
 
 def test_query_get_descritores_experimentais():
-    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, {"var_inde": { "$all": ["macho","flx2.5mg"]}}]}
+    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
+                        {"var_ind.sexo":"macho"},
+                        {"var_ind.dosagem": "flx2.5mg"}]}
     j = qf.Get_Juncoes(dict_query)
     cursor = j.get_cursor()
 
@@ -48,12 +54,47 @@ def test_query_get_descritores_experimentais():
 
 
 def test_query_get_descritores_experimentais_class():
-    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, {"var_inde": { "$all": ["macho","flx2.5mg"]}}]}
+    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
+                        {"var_ind.sexo":"macho"},
+                        {"var_ind.dosagem": "flx2.5mg"}]}
     cs = qf.Get_CSV(dict_query)
     li_str_descritores = ["duracao", "frequencia"]
     li_str_categora = ["Immobility", "Swimming"]
 
     data = cs.set_descritores_experimentais(li_str_descritores, li_str_categora )
-    
+
+
+def test_query_juncao_des():
+    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
+                        {"var_ind.sexo":"macho"},
+                        {"var_ind.dosagem": "flx2.5mg"}]}
+
+    j = qf.Get_Juncoes(dict_query)
+    cursor = j.get_cursor()
+
+    lis_de_juncao = ["sexo", "dosagem", "unidade"]
+
+
+    cdj = qf.Constru_descritor_juncao(lis_de_juncao)
+    resultado = cdj.get_descritor(list(cursor))
+    print(resultado)
     # df = pd.DataFrame(data)
     # print(df)
+
+def test_get_df():
+    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
+                        {"var_ind.sexo":"macho"},
+                        {"var_ind.dosagem": "flx2.5mg"}]}
+
+    j = qf.Get_Juncoes(dict_query)
+    cursor = j.get_cursor()
+
+    lis_de_juncao = ["sexo", "dosagem", "unidade"]
+
+
+    cdj = qf.Constru_descritor_juncao(lis_de_juncao)
+    resultado = cdj.get_descritor(list(cursor))
+
+    tr = qf.Transforma_Estrutura_Dados_Panda(resultado)
+
+    print(tr.get_df())

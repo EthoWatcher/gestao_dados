@@ -3,7 +3,7 @@ import json
 
 
 path_eto = "./examples/eto_conver_.json"
-
+path_junca_teste = "./examples/juncao_teste.json"
 
 def get_arquivo(arquivo):
     with open(arquivo, 'r', encoding="utf-8") as f:
@@ -60,3 +60,8 @@ def test_descritor_todos():
     freq = et_d.Descritor_frequencia_expe_cate(e, "Immobility")
     duracao = et_d.Descritor_duracao_expe_cate(e, "Immobility")
     print(duracao)
+
+def test_descritor_juncao_experimento():
+     dic = get_arquivo(path_junca_teste)
+     de = et_d.Descritor_Juncao_experimento(dic,"sexo")
+     print(de.resultado)
