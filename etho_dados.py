@@ -7,6 +7,87 @@ class Descritor:
     def get_resultado(self):
         return self.resultado
 
+# fusao descritor experimental com etografia ou 
+
+# fusao etografia com rastreamento
+
+class Descritores_nome_categoria_etografia(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'categoria':self._calcula(), "info":f'Nome da categoria marcada'}
+    def _calcula(self):
+        def map_nome(anotaca):
+            return anotaca["@nome"]
+        dura =  list(map(map_nome, self.eto.anotacoes ))
+        
+        return dura
+
+class Descritores_trecho_categoria_etografia(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'trecho':self._calcula(), "info":f'Sequencia de anotacao'}
+    def _calcula(self):
+        def map_nome(anotaca):
+            return anotaca["@ponto"]
+        dura =  list(map(map_nome, self.eto.anotacoes ))
+        
+        return dura
+
+class Descritores_q_inicio_categoria_etografia(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'q_inicio':self._calcula(), "info":f'Quadro inicial do comportamento'}
+    def _calcula(self):
+        def map_nome(anotaca):
+            return anotaca["@frameInicial"]
+        dura =  list(map(map_nome, self.eto.anotacoes ))
+        
+        return dura
+
+class Descritores_q_fim_categoria_etografia(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'q_fim':self._calcula(), "info":f'Quadro final do comportamento'}
+    def _calcula(self):
+        def map_nome(anotaca):
+            return anotaca["@frameFinal"]
+
+        dura =  list(map(map_nome, self.eto.anotacoes ))
+        return dura
+
+# class Descritores_categorias_experimento(Descritor):
+#     def __init__(self, etografia, categoria):
+#         super().__init__(etografia, categoria)
+#         self.resultado = {f'anotacoes':self._calcula(), "info":f'Quadro inicial do experimento'}
+
+#     def _calcula(self):
+#         dura =  self.eto.anotacoes
+#         return dura
+
+
+## Refatorar esse documento para melhor posicionar
+
+
+class Descritor_quadro_inicio_experimento(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'q_inicio_experimento':self._calcula(), "info":f'Quadro final do experimento'}
+
+    def _calcula(self):
+        dura =  self.eto.dados_videos["frameProces"]
+        return dura
+
+class Descritor_quadro_fim_experimento(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'q_final_experimento':self._calcula(), "info":f'Quadro inicial do experimento'}
+
+    def _calcula(self):
+        dura =  self.eto.dados_videos["frameFinal"]
+        return dura
+
+
+
 class Descritor_duracao_experimento(Descritor):
     def __init__(self, etografia, categoria):
         super().__init__(etografia, categoria)

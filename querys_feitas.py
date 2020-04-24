@@ -14,7 +14,7 @@ class Transforma_Estrutura_Dados_Panda():
         return self.df
 
     def _constroi_data_frame(self):
-        df = pd.DataFrame(self.dic_pandas)
+        df = pd.DataFrame(self.dic_pandas, columns=self.keys)
         return df
 
 
@@ -48,8 +48,43 @@ class Transforma_Estrutura_Dados_Panda():
         return dic
 
 
+class Transforma_Estrutura_Dados_Panda_list_dados(Transforma_Estrutura_Dados_Panda):
+    def __init__(self, data_descritores):
+        super().__init__(data_descritores)
 
+    def _constroi_data_frame(self):
+        lis_keys = list(self.dic_pandas.keys())
+        t_etografias = len(self.dic_pandas[lis_keys[0]])
+        l_df = []
+        for i in range(t_etografias):
+            dic_saida = self._filter(lis_keys,i)
+            l_df.append((pd.DataFrame(dic_saida, columns=self.keys)))
 
+        # def create_mapa(index):
+        #     def maping(dic_pandas):
+        #         pass
+        # df = pd.DataFrame(self.dic_pandas, columns=self.keys)
+        result = pd.concat(l_df)
+        return result
+
+    def _filter(self, lis_keys, index):
+        # df = pd.DataFrame(self.dic_pandas, columns=self.keys)
+        def constori_filter_index(index):
+            def filter_vetor(numero_vetor):
+                i, vetor = numero_vetor
+                r_index_i = i == index
+                return r_index_i
+            return filter_vetor 
+        
+        def map_segundo_elemento(tupla):
+            return tupla[1]
+        dict_saida = {}
+        for key in lis_keys:
+            lis_saida = list(map(map_segundo_elemento, filter(constori_filter_index(index),enumerate(self.dic_pandas[key]))))
+            dict_saida[key] = lis_saida[0]
+        return dict_saida
+
+        # return
 
 class Get_CSV():
     def __init__(self, query):
@@ -62,6 +97,7 @@ class Get_CSV():
         return cursor
 
     def set_descritores_experimentais(self, li_str_descritores, li_str_categora ):
+        # isso aqui tem que melhorar uma Etografia é para lidar com o mongo e a outroa para dar um parser nos dados
         def get_etografias(juncao):
             eto = et_m.Etografia()
             eto = eto.get_by_hash(juncao["id_eto"])
@@ -80,8 +116,76 @@ class Get_CSV():
     def set_variaveis_quadros(self):
         pass
 
+# Refatorar todos esse nomes.
+class Construcao_descritor_etografia():
+    #  list_des_etografia =["nome", "trecho", "q_inicial", "q_final"]
+    def __init__(self, list_des_etografia, query):
+        self.dict_query = query
+        self.lis_de_juncao = list_des_etografia
+    
+    def _get_cursor(self):
+        j = Get_Juncoes(self.dict_query)
+        cursor = j.get_cursor()
+        return cursor
+    
+    def _get_lista_etografia(self):
+        def get_etografias(juncao):
+                eto = et_m.Etografia()
+                eto = eto.get_by_hash(juncao["id_eto"])
+                e_dados = et_d.Etografia(eto.cliente.data)
+                return {"eto": e_dados, "id_j": str(juncao["_id"])}
 
+        l_u_eto_jun_id = list(map(get_etografias, self._get_cursor() ))
+        return l_u_eto_jun_id
 
+    def get_descritor(self):
+        list_etogra_u_junc = self._get_lista_etografia()
+        descritores_pegados = []
+
+        for eto_junca in list_etogra_u_junc:
+            descritores = self._get_descritores(eto_junca["eto"])
+
+            descritores.append(self._list_juncao_iguais(descritores, eto_junca))
+            descritores_pegados.append(descritores)
+
+        return descritores_pegados
+
+    def _list_juncao_iguais(self, descritores_eto, eto_junca):
+        key = list(descritores_eto[0].keys())
+        ls_keys = []
+        for i in range(len(descritores_eto[0][key[0]])):
+            ls_keys.append(eto_junca["id_j"])
+        
+
+        dic_saida = {
+                "id_j": ls_keys,
+                'info' : "Identificador unico da juncao"
+            }
+        return dic_saida
+        
+
+    
+    def _get_descritores(self, etografia):
+        li = []
+        for descritor in self.lis_de_juncao:
+            d = self._get_proces(etografia, descritor)
+            li.append(d.resultado)
+        
+        return li
+
+    def _get_proces(self, etografia, nome):
+        if nome == "nome":
+            return et_d.Descritores_nome_categoria_etografia(etografia,"")
+        elif nome == "trecho":
+            return et_d.Descritores_trecho_categoria_etografia(etografia,"")
+        elif nome == "q_inicial":
+            return et_d.Descritores_q_inicio_categoria_etografia(etografia,"")
+        elif nome == "q_final":
+            return et_d.Descritores_q_fim_categoria_etografia(etografia,"")
+        else:
+            pass
+        
+        
 
 
 class Constru_descritor_juncao():
@@ -110,7 +214,6 @@ class Constru_descritor_juncao():
         li = []
         for descritor in self.lis_de_juncao:
             d = self._get_proces(juncao, descritor)
-            
             li.append(d.resultado)
         
         return li
@@ -135,7 +238,12 @@ class Constru_descritor_experimental():
             return et_d.Descritor_frequencia_expe_cate(etografia, categoria)
         elif nome == "latencia":
             return et_d.Descritor_latencia_expe_cate(etografia, categoria)
-
+        elif nome == "quadro_inicial_experimento":
+            return et_d.Descritor_quadro_inicio_experimento(etografia, categoria)
+        elif nome == "quadro_final_experimento":
+            return et_d.Descritor_quadro_fim_experimento(etografia, categoria)
+        elif nome == "duracao_experimento":
+            return et_d.Descritor_duracao_experimento(etografia,categoria)
     
     def _get_descritores(self, etografia):
         lis_descritores= []
