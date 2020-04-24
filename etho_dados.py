@@ -183,6 +183,24 @@ class Descritor_frequencia_expe_cate():
     def get_resultado(self):
         return self.resultado
 
+
+class Descritor_variavel_Rastreamento(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'{categoria}':self._calcula(), "info":f'Rastreamento'}
+        # self.categoria = categoria
+
+    def _calcula(self):
+        def map_nome(anotaca):
+            return anotaca[f'{self.cat}']
+
+        variavel =  list(map(map_nome, self.eto.anotacao_ras ))
+        
+        return variavel
+
+
+
+
 class Rastreamento:
     def __init__(self, data):
         self.data = data

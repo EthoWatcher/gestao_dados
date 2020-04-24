@@ -86,36 +86,37 @@ class Transforma_Estrutura_Dados_Panda_list_dados(Transforma_Estrutura_Dados_Pan
 
         # return
 
-class Get_CSV():
-    def __init__(self, query):
-        self.dict_query = query
-        self.descriotres_experimento = []
+# class Get_CSV():
+#     def __init__(self, query):
+#         self.dict_query = query
+#         self.descriotres_experimento = []
 
-    def _get_cursor(self):
-        j = Get_Juncoes(self.dict_query)
-        cursor = j.get_cursor()
-        return cursor
+#     def _get_cursor(self):
+#         j = Get_Juncoes(self.dict_query)
+#         cursor = j.get_cursor()
+#         return cursor
 
-    def set_descritores_experimentais(self, li_str_descritores, li_str_categora ):
-        # isso aqui tem que melhorar uma Etografia é para lidar com o mongo e a outroa para dar um parser nos dados
-        def get_etografias(juncao):
-            eto = et_m.Etografia()
-            eto = eto.get_by_hash(juncao["id_eto"])
-            e_dados = et_d.Etografia(eto.cliente.data)
-            return {"eto": e_dados, "id_j": str(juncao["_id"])}
+#     def set_descritores_experimentais(self, li_str_descritores, li_str_categora ):
+#         # isso aqui tem que melhorar uma Etografia é para lidar com o mongo e a outroa para dar um parser nos dados
+#         def get_etografias(juncao):
+#             eto = et_m.Etografia()
+#             eto = eto.get_by_hash(juncao["id_eto"])
+#             e_dados = et_d.Etografia(eto.cliente.data)
+#             return {"eto": e_dados, "id_j": str(juncao["_id"])}
 
 
-        self.cursor = self._get_cursor()
-        l_u_eto_jun_id = list(map(get_etografias, self.cursor ))
-        des_experimental = Constru_descritor_experimental(li_str_descritores, li_str_categora)
-        self.descriotres_experimento = des_experimental.get_descritores_etografia(l_u_eto_jun_id)
-        return self.descriotres_experimento
-    def set_descritores_episodeo_comportamento(self):
-        pass
+#         self.cursor = self._get_cursor()
+#         l_u_eto_jun_id = list(map(get_etografias, self.cursor ))
+#         des_experimental = Constru_descritor_experimental(li_str_descritores, li_str_categora)
+#         self.descriotres_experimento = des_experimental.get_descritores_etografia(l_u_eto_jun_id)
+#         return self.descriotres_experimento
+#     def set_descritores_episodeo_comportamento(self):
+#         pass
 
-    def set_variaveis_quadros(self):
-        pass
+#     def set_variaveis_quadros(self):
+#         pass
 
+####################################################################################
 # Refatorar todos esse nomes.
 class Construcao_descritor_etografia():
     #  list_des_etografia =["nome", "trecho", "q_inicial", "q_final"]
@@ -130,10 +131,10 @@ class Construcao_descritor_etografia():
     
     def _get_lista_etografia(self):
         def get_etografias(juncao):
-                eto = et_m.Etografia()
-                eto = eto.get_by_hash(juncao["id_eto"])
-                e_dados = et_d.Etografia(eto.cliente.data)
-                return {"eto": e_dados, "id_j": str(juncao["_id"])}
+            eto = et_m.Etografia()
+            eto = eto.get_by_hash(juncao["id_eto"])
+            e_dados = et_d.Etografia(eto.cliente.data)
+            return {"eto": e_dados, "id_j": str(juncao["_id"])}
 
         l_u_eto_jun_id = list(map(get_etografias, self._get_cursor() ))
         return l_u_eto_jun_id
@@ -185,16 +186,92 @@ class Construcao_descritor_etografia():
         else:
             pass
         
+    
+
+class Constru_descritor_rastreamento():
+    #  list_var_rastreamento =["@f", "@vd", "q_inicial", "q_final"]
+    # o do frame sempre add
+    def __init__(self, list_var_rastreamento, query):
+        self.dict_query = query
+        self.list_var_rastreamento = self._add_a_coluna_f(list_var_rastreamento)
+    
+    def _add_a_coluna_f(self,list_var_rastreamento):
+        saida = ["@f"]
+        for var in list_var_rastreamento:
+            saida.append(var)
+        return saida
+    
+    def _get_cursor(self):
+        j = Get_Juncoes(self.dict_query)
+        cursor = j.get_cursor()
+        return cursor
+    
+    def _get_lista_rastreamento(self):
+        def get_rastreamento(juncao):
+            rastr = et_m.Rastreamento()
+            rastr = rastr.get_by_hash(juncao["id_tra"])
+            r_dados = et_d.Rastreamento(rastr.cliente.data)
+            return {"rastr": r_dados, "id_j": str(juncao["_id"])}
+
+
+        l_u_eto_jun_id = list(map(get_rastreamento, self._get_cursor() ))
+        return l_u_eto_jun_id
+
+    def get_descritor(self):
+        list_etogra_u_junc = self._get_lista_rastreamento()
+
+        descritores_pegados = []
+        for ras_junca in list_etogra_u_junc:
+            descritores = self._get_descritores(ras_junca["rastr"])
+
+            descritores.append(self._list_juncao_iguais(descritores, ras_junca))
+            descritores_pegados.append(descritores)
+
+        return descritores_pegados
+
+    def _list_juncao_iguais(self, descritores_ras, eto_junca):
+        key = list(descritores_ras[0].keys())
+        ls_keys = []
+        for i in range(len(descritores_ras[0][key[0]])):
+            ls_keys.append(eto_junca["id_j"])
+
+        dic_saida = {
+                "id_j": ls_keys,
+                'info' : "Identificador unico da juncao"
+            }
+        return dic_saida
         
+
+    
+    def _get_descritores(self, rastrea):
+        li = []
+        for descritor in self.list_var_rastreamento:
+            d = self._get_proces(rastrea, descritor)
+            li.append(d.resultado)
+        
+        return li
+
+    def _get_proces(self, rastreamento, nome):
+        return et_d.Descritor_variavel_Rastreamento(rastreamento,nome)
+
+
 
 
 class Constru_descritor_juncao():
     # lis_de_juncao = ["sexo", "dosagem", "unidade"]
-    def __init__(self, lis_des_juncao):
+    def __init__(self, lis_des_juncao, query):
         self.lis_de_juncao = lis_des_juncao
+        self.dict_query = query
 
-    def get_descritor(self, l_juncao):
+    def _get_cursor(self):
+        j = Get_Juncoes(self.dict_query)
+        cursor = j.get_cursor()
+        return cursor
+
+    def get_descritor(self):
         descritores_pegados = []
+        l_juncao = self._get_cursor()
+
         for juncao in l_juncao:   
             descritores = self._get_descritores(juncao)
 
@@ -218,15 +295,22 @@ class Constru_descritor_juncao():
         
         return li
 
-    
+
+
 
 
 
 # menor string tem que morfa maior
 class Constru_descritor_experimental():
-    def __init__(self, li_str_descritores, li_str_cate):
+    def __init__(self, li_str_descritores, li_str_cate, query):
         self.li_str_descritores= li_str_descritores
         self.li_str_cate = li_str_cate
+        self.dict_query = query
+    
+    def _get_cursor(self):
+        j = Get_Juncoes(self.dict_query)
+        cursor = j.get_cursor()
+        return cursor
     
     def _get_proces(self, nome, etografia, categoria):
         if nome == "duracao":
@@ -254,9 +338,20 @@ class Constru_descritor_experimental():
         
         return lis_descritores
 
+    def _get_vetor_dados(self):
+        def get_etografias(juncao):
+            eto = et_m.Etografia()
+            eto = eto.get_by_hash(juncao["id_eto"])
+            e_dados = et_d.Etografia(eto.cliente.data)
+            return {"eto": e_dados, "id_j": str(juncao["_id"])}
+        cursor = self._get_cursor()
+        l_u_eto_jun_id = list(map(get_etografias,cursor))
+        return l_u_eto_jun_id
+
     # terminar
     # unicao entre etografias e o id da juncao
-    def get_descritores_etografia(self, l_u_eto_jun_id):
+    def get_descritores_etografia(self):
+        l_u_eto_jun_id = self._get_vetor_dados()
         descritores_pegados = []
         for u_eto_jun_id in l_u_eto_jun_id:
             lis_descritores= self._get_descritores(u_eto_jun_id["eto"])
@@ -274,7 +369,7 @@ class Constru_descritor_experimental():
         
         return descritores_pegados
 
-
+####################################################################################
             
 
 class Get_Juncoes():
@@ -286,7 +381,3 @@ class Get_Juncoes():
     def get_cursor(self):
         return self.cursor
 
-
-
-class Calcula_descritores():
-    pass
