@@ -190,7 +190,18 @@ class Etografia:
         self.data = data
         self.anotacoes = self.data["analiseEtografica"]["dadosAnalise"]["analises"]["analise"]
         self._add_nome_categoria_anotacao()
+        self._arbritrariedade_lidar_ambiguidade()
         self._get_dados_video()
+
+    def _arbritrariedade_lidar_ambiguidade(self):
+        tamanho = len(self.anotacoes) - 1
+        for i, anotacao in enumerate(self.anotacoes):
+            r_ultima_anotacao = i >= tamanho
+            if r_ultima_anotacao:
+                anotacao["@frameFinal"] = anotacao["@frameFinal"] 
+            else:
+                anotacao["@frameFinal"] = anotacao["@frameFinal"] - 1
+
 
 
     def get_dados_video_analisado(self):
