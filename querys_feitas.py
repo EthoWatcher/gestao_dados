@@ -122,8 +122,25 @@ class Construcao_descritor_etografia():
     #  list_des_etografia =["nome", "trecho", "q_inicial", "q_final"]
     def __init__(self, list_des_etografia, query):
         self.dict_query = query
-        self.lis_de_juncao = list_des_etografia
+        self.lis_de_juncao = self._add_a_coluna_f(list_des_etografia)
     
+    def _add_a_coluna_f(self,list_var_rastreamento):
+        r_tem_ja_um_q_inicial = "q_inicial" in list_var_rastreamento
+        r_tem_ja_um_q_final = "q_final" in list_var_rastreamento
+
+        saida = []
+        if not r_tem_ja_um_q_inicial:
+            saida.append("q_inicial")
+        if not r_tem_ja_um_q_final:
+            saida.append("q_final")
+
+        for var in list_var_rastreamento:
+            saida.append(var)
+
+        return saida
+
+
+
     def _get_cursor(self):
         j = Get_Juncoes(self.dict_query)
         cursor = j.get_cursor()
@@ -202,9 +219,16 @@ class Constru_descritor_rastreamento():
         self.list_var_rastreamento = self._add_a_coluna_f(list_var_rastreamento)
     
     def _add_a_coluna_f(self,list_var_rastreamento):
-        saida = ["@f"]
+        r_tem_ja_um_f = "@f" in list_var_rastreamento
+        saida = []
+        if r_tem_ja_um_f:
+            saida = []  
+        else:
+            saida = ["@f"]
+
         for var in list_var_rastreamento:
             saida.append(var)
+
         return saida
     
     def _get_cursor(self):
