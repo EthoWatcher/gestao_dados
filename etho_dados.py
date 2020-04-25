@@ -129,6 +129,17 @@ class Descritor_duracao_expe_cate():
         self.cat = categoria
         self.resultado = {f'd_e_{self.cat}_s':self._calcula(), "info":f'Duração do comportamento {self.cat} no experimento (s)'}
 
+    def _ajuste(self):
+        seq = self.eto.get_anotacoes_eto_categoria(self.cat)
+        ultimo_elemento= self.eto.anotacoes[len(self.eto.anotacoes)-1]
+        r_ultima_categoria = ultimo_elemento["@nome"] == self.cat
+        ajuste = 0
+        if r_ultima_categoria:
+            ajuste = len(seq) -1
+        else:
+            ajuste = len(seq)
+
+        return ajuste / self.eto.dados_videos["fps"] 
 
     def _calcula(self):
         dura = 0
@@ -136,6 +147,7 @@ class Descritor_duracao_expe_cate():
             dura = dura + anota["@frameFinal"] - anota["@frameInicial"]
         
         dura = dura /self.eto.dados_videos["fps"]
+        dura = dura + self._ajuste()
         return dura
  
 
