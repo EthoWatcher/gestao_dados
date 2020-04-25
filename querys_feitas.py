@@ -149,7 +149,13 @@ class Construcao_descritor_etografia():
             descritores.append(self._list_juncao_iguais(descritores, eto_junca))
             descritores_pegados.append(descritores)
 
-        return descritores_pegados
+
+        return self._ageitando_saida(descritores_pegados)
+
+    def _ageitando_saida(self, descritores_pegados):
+        self.tr = Transforma_Estrutura_Dados_Panda_list_dados(descritores_pegados)
+        self.df = self.tr.get_df()
+        return self.df
 
     def _list_juncao_iguais(self, descritores_eto, eto_junca):
         key = list(descritores_eto[0].keys())
@@ -227,7 +233,15 @@ class Constru_descritor_rastreamento():
             descritores.append(self._list_juncao_iguais(descritores, ras_junca))
             descritores_pegados.append(descritores)
 
-        return descritores_pegados
+        # return descritores_pegados
+
+        return self._ageitando_saida(descritores_pegados)
+
+    def _ageitando_saida(self, descritores_pegados):
+        self.tr = Transforma_Estrutura_Dados_Panda_list_dados(descritores_pegados)
+        self.df = self.tr.get_df()
+        return self.df
+
 
     def _list_juncao_iguais(self, descritores_ras, eto_junca):
         key = list(descritores_ras[0].keys())
@@ -280,7 +294,14 @@ class Constru_descritor_juncao():
                 'info' : "Identificador unico da juncao"
             })
             descritores_pegados.append(descritores)
-        return descritores_pegados
+        # return descritores_pegados
+    
+        return self._ageitando_saida(descritores_pegados)
+
+    def _ageitando_saida(self, descritores_pegados):
+        self.tr = Transforma_Estrutura_Dados_Panda(descritores_pegados)
+        self.df = self.tr.get_df()
+        return self.df
 
     def _get_proces(self, juncao, categoria):
         return et_d.Descritor_Juncao_experimento(juncao, categoria)
@@ -367,8 +388,14 @@ class Constru_descritor_experimental():
 
             descritores_pegados.append(lis_descritores) 
         
-        return descritores_pegados
+        # return descritores_pegados
 
+        return self._ageitando_saida(descritores_pegados)
+
+    def _ageitando_saida(self, descritores_pegados):
+        self.tr = Transforma_Estrutura_Dados_Panda(descritores_pegados)
+        self.df = self.tr.get_df()
+        return self.df
 ####################################################################################
             
 

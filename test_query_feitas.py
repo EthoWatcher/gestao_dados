@@ -96,9 +96,10 @@ def test_get_df():
     cdj = qf.Constru_descritor_juncao(lis_de_juncao, dict_query)
     resultado = cdj.get_descritor() #list(cursor)
 
-    tr = qf.Transforma_Estrutura_Dados_Panda(resultado)
+    print(resultado)
+    # tr = qf.Transforma_Estrutura_Dados_Panda(resultado)
 
-    print(tr.get_df())
+    # print(tr.get_df())
 
 def test_get_descritor_eto():
     dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
@@ -109,10 +110,10 @@ def test_get_descritor_eto():
     de_eto = qf.Construcao_descritor_etografia(list_des_etografia, dict_query)
     result = de_eto.get_descritor()
     
-    tr = qf.Transforma_Estrutura_Dados_Panda_list_dados(result)
-    df = tr.get_df()
+    # tr = qf.Transforma_Estrutura_Dados_Panda_list_dados(result)
+    # df = tr.get_df()
 
-    print(df)
+    print(result)
 
 
 def test_get_descritor_rastreamento():
@@ -124,8 +125,8 @@ def test_get_descritor_rastreamento():
     de_ras = qf.Constru_descritor_rastreamento(list_var_rastreamento, dict_query)
     result = de_ras.get_descritor()
     
-    tr = qf.Transforma_Estrutura_Dados_Panda_list_dados(result)
-    df = tr.get_df()
+    # tr = qf.Transforma_Estrutura_Dados_Panda_list_dados(result)
+    # df = tr.get_df()
 
-    print(df)
+    print(result)
     
