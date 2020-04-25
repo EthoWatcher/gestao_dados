@@ -130,16 +130,17 @@ class Descritor_duracao_expe_cate():
         self.resultado = {f'd_e_{self.cat}_s':self._calcula(), "info":f'Duração do comportamento {self.cat} no experimento (s)'}
 
     def _ajuste(self):
-        seq = self.eto.get_anotacoes_eto_categoria(self.cat)
-        ultimo_elemento= self.eto.anotacoes[len(self.eto.anotacoes)-1]
-        r_ultima_categoria = ultimo_elemento["@nome"] == self.cat
-        ajuste = 0
-        if r_ultima_categoria:
-            ajuste = len(seq) -1
-        else:
-            ajuste = len(seq)
+        return 0
+        # seq = self.eto.get_anotacoes_eto_categoria(self.cat)
+        # ultimo_elemento= self.eto.anotacoes[len(self.eto.anotacoes)-1]
+        # r_ultima_categoria = ultimo_elemento["@nome"] == self.cat
+        # ajuste = 0
+        # if r_ultima_categoria:
+        #     ajuste = len(seq) -1
+        # else:
+        #     ajuste = len(seq)
 
-        return ajuste / self.eto.dados_videos["fps"] 
+        # return ajuste / self.eto.dados_videos["fps"] 
 
     def _calcula(self):
         dura = 0
@@ -269,13 +270,14 @@ class Etografia:
         self._get_dados_video()
 
     def _arbritrariedade_lidar_ambiguidade(self):
-        tamanho = len(self.anotacoes) - 1
-        for i, anotacao in enumerate(self.anotacoes):
-            r_ultima_anotacao = i >= tamanho
-            if r_ultima_anotacao:
-                anotacao["@frameFinal"] = anotacao["@frameFinal"] 
-            else:
-                anotacao["@frameFinal"] = anotacao["@frameFinal"] - 1
+        pass
+        # tamanho = len(self.anotacoes) - 1
+        # for i, anotacao in enumerate(self.anotacoes):
+        #     r_ultima_anotacao = i >= tamanho
+        #     if r_ultima_anotacao:
+        #         anotacao["@frameFinal"] = anotacao["@frameFinal"] 
+        #     else:
+        #         anotacao["@frameFinal"] = anotacao["@frameFinal"] - 1
 
 
 
