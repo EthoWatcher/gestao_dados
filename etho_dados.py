@@ -11,10 +11,13 @@ class Descritor:
 
 # fusao etografia com rastreamento
 
+
+
 class Descritores_nome_categoria_etografia(Descritor):
     def __init__(self, etografia, categoria):
         super().__init__(etografia, categoria)
         self.resultado = {f'categoria':self._calcula(), "info":f'Nome da categoria marcada'}
+
     def _calcula(self):
         def map_nome(anotaca):
             return anotaca["@nome"]
@@ -97,6 +100,18 @@ class Descritor_duracao_experimento(Descritor):
         dura =  self.eto.dados_videos["frameFinal"] - self.eto.dados_videos["frameProces"]
         dura = dura/self.eto.dados_videos["fps"]
         return dura
+
+
+class Descritor_nome_caminho_experimento(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'path_experimento':self._calcula(), "info":f'Nome da categoria marcada'}
+
+    def _calcula(self):
+        path_etografia = self.eto.dados_videos["nomeVxml"]
+        return path_etografia
+
+
 
 class Descritor_Juncao_experimento(Descritor):
     def __init__(self, junca_data, categoria):

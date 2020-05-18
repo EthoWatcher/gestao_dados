@@ -30,6 +30,7 @@ class Fusao_variaveis():
         self.df_juncao = cdj.get_descritor() #list(cursor)
 
     def set_variaveis_descritore_eto_experimento(self, li_str_descritores, li_str_categora ):
+        # nome
         # li_str_descritores = ["duracao", "frequencia"]
         # li_str_categora = ["Immobility", "Swimming"]
         des_experimental = qf.Constru_descritor_experimental(li_str_descritores, li_str_categora, self.dict_query)

@@ -373,6 +373,10 @@ class Constru_descritor_experimental():
             return et_d.Descritor_quadro_fim_experimento(etografia, categoria)
         elif nome == "duracao_experimento":
             return et_d.Descritor_duracao_experimento(etografia,categoria)
+        elif nome == "path_experimento":
+            return et_d.Descritor_nome_caminho_experimento(etografia, categoria)
+
+            
     
     def _get_descritores(self, etografia):
         lis_descritores= []

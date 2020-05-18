@@ -76,6 +76,13 @@ def test_descritor_nome_etografia():
     print(de.resultado)
 
 
+def test_descritor_path_etografia():
+    dic = get_arquivo(path_eto)
+    e = et_d.Etografia(dic)
+    de = et_d.Descritor_nome_caminho_experimento(e,"")
+
+    print(de.resultado)
+
 def test_dados_rastreamento():
     dic = get_arquivo(path_trak)
     e = et_d.Rastreamento(dic)
