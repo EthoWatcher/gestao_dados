@@ -1,0 +1,1230 @@
+{
+    "_id" : "",
+    "analiseEtografica" : {
+        "dadosExperimentador" : {
+            "experimentador" : null,
+            "laboratorio" : null
+        },
+        "dadosVideoAnalisado" : {
+            "nomeVxml" : "C:/Mestrado Oficial Marino/Videos cegados/Calibrados/a56z74b7.vxml",
+            "frameInicial" : "0",
+            "frameProces" : "111",
+            "frameFinal" : "8038",
+            "fps" : "30"
+        },
+        "dadosCatalago" : {
+            "nomeCaminhoExt" : "C:/Mestrado Oficial Marino/novocatalogo.caxml",
+            "Categorias" : {
+                "categoria" : [ 
+                    {
+                        "@id" : "0",
+                        "@nome" : "Headshaking"
+                    }, 
+                    {
+                        "@id" : "1",
+                        "@nome" : "Diving"
+                    }, 
+                    {
+                        "@id" : "2",
+                        "@nome" : "Swimming"
+                    }, 
+                    {
+                        "@id" : "3",
+                        "@nome" : "Immobility"
+                    }, 
+                    {
+                        "@id" : "4",
+                        "@nome" : "Undefined"
+                    }, 
+                    {
+                        "@id" : "5",
+                        "@nome" : "Climbing"
+                    }
+                ]
+            }
+        },
+        "dadosAnalise" : {
+            "tipoAnalise" : "Autoesclusiva",
+            "analises" : {
+                "analise" : [ 
+                    {
+                        "@ponto" : "0",
+                        "@id" : "3",
+                        "@frameInicial" : "123",
+                        "@frameFinal" : "153"
+                    }, 
+                    {
+                        "@ponto" : "1",
+                        "@id" : "4",
+                        "@frameInicial" : "153",
+                        "@frameFinal" : "171"
+                    }, 
+                    {
+                        "@ponto" : "2",
+                        "@id" : "3",
+                        "@frameInicial" : "171",
+                        "@frameFinal" : "201"
+                    }, 
+                    {
+                        "@ponto" : "3",
+                        "@id" : "2",
+                        "@frameInicial" : "201",
+                        "@frameFinal" : "212"
+                    }, 
+                    {
+                        "@ponto" : "4",
+                        "@id" : "3",
+                        "@frameInicial" : "212",
+                        "@frameFinal" : "247"
+                    }, 
+                    {
+                        "@ponto" : "5",
+                        "@id" : "2",
+                        "@frameInicial" : "247",
+                        "@frameFinal" : "263"
+                    }, 
+                    {
+                        "@ponto" : "6",
+                        "@id" : "3",
+                        "@frameInicial" : "263",
+                        "@frameFinal" : "303"
+                    }, 
+                    {
+                        "@ponto" : "7",
+                        "@id" : "2",
+                        "@frameInicial" : "303",
+                        "@frameFinal" : "314"
+                    }, 
+                    {
+                        "@ponto" : "8",
+                        "@id" : "3",
+                        "@frameInicial" : "314",
+                        "@frameFinal" : "355"
+                    }, 
+                    {
+                        "@ponto" : "9",
+                        "@id" : "2",
+                        "@frameInicial" : "355",
+                        "@frameFinal" : "363"
+                    }, 
+                    {
+                        "@ponto" : "10",
+                        "@id" : "3",
+                        "@frameInicial" : "363",
+                        "@frameFinal" : "405"
+                    }, 
+                    {
+                        "@ponto" : "11",
+                        "@id" : "2",
+                        "@frameInicial" : "405",
+                        "@frameFinal" : "417"
+                    }, 
+                    {
+                        "@ponto" : "12",
+                        "@id" : "3",
+                        "@frameInicial" : "417",
+                        "@frameFinal" : "515"
+                    }, 
+                    {
+                        "@ponto" : "13",
+                        "@id" : "2",
+                        "@frameInicial" : "515",
+                        "@frameFinal" : "534"
+                    }, 
+                    {
+                        "@ponto" : "14",
+                        "@id" : "5",
+                        "@frameInicial" : "534",
+                        "@frameFinal" : "547"
+                    }, 
+                    {
+                        "@ponto" : "15",
+                        "@id" : "4",
+                        "@frameInicial" : "547",
+                        "@frameFinal" : "564"
+                    }, 
+                    {
+                        "@ponto" : "16",
+                        "@id" : "5",
+                        "@frameInicial" : "564",
+                        "@frameFinal" : "583"
+                    }, 
+                    {
+                        "@ponto" : "17",
+                        "@id" : "3",
+                        "@frameInicial" : "583",
+                        "@frameFinal" : "603"
+                    }, 
+                    {
+                        "@ponto" : "18",
+                        "@id" : "5",
+                        "@frameInicial" : "603",
+                        "@frameFinal" : "609"
+                    }, 
+                    {
+                        "@ponto" : "19",
+                        "@id" : "3",
+                        "@frameInicial" : "609",
+                        "@frameFinal" : "632"
+                    }, 
+                    {
+                        "@ponto" : "20",
+                        "@id" : "2",
+                        "@frameInicial" : "632",
+                        "@frameFinal" : "641"
+                    }, 
+                    {
+                        "@ponto" : "21",
+                        "@id" : "3",
+                        "@frameInicial" : "641",
+                        "@frameFinal" : "660"
+                    }, 
+                    {
+                        "@ponto" : "22",
+                        "@id" : "2",
+                        "@frameInicial" : "660",
+                        "@frameFinal" : "674"
+                    }, 
+                    {
+                        "@ponto" : "23",
+                        "@id" : "3",
+                        "@frameInicial" : "674",
+                        "@frameFinal" : "693"
+                    }, 
+                    {
+                        "@ponto" : "24",
+                        "@id" : "5",
+                        "@frameInicial" : "693",
+                        "@frameFinal" : "753"
+                    }, 
+                    {
+                        "@ponto" : "25",
+                        "@id" : "3",
+                        "@frameInicial" : "753",
+                        "@frameFinal" : "782"
+                    }, 
+                    {
+                        "@ponto" : "26",
+                        "@id" : "2",
+                        "@frameInicial" : "782",
+                        "@frameFinal" : "799"
+                    }, 
+                    {
+                        "@ponto" : "27",
+                        "@id" : "4",
+                        "@frameInicial" : "799",
+                        "@frameFinal" : "835"
+                    }, 
+                    {
+                        "@ponto" : "28",
+                        "@id" : "5",
+                        "@frameInicial" : "835",
+                        "@frameFinal" : "875"
+                    }, 
+                    {
+                        "@ponto" : "29",
+                        "@id" : "4",
+                        "@frameInicial" : "875",
+                        "@frameFinal" : "976"
+                    }, 
+                    {
+                        "@ponto" : "30",
+                        "@id" : "5",
+                        "@frameInicial" : "976",
+                        "@frameFinal" : "984"
+                    }, 
+                    {
+                        "@ponto" : "31",
+                        "@id" : "4",
+                        "@frameInicial" : "984",
+                        "@frameFinal" : "1035"
+                    }, 
+                    {
+                        "@ponto" : "32",
+                        "@id" : "5",
+                        "@frameInicial" : "1035",
+                        "@frameFinal" : "1286"
+                    }, 
+                    {
+                        "@ponto" : "33",
+                        "@id" : "3",
+                        "@frameInicial" : "1286",
+                        "@frameFinal" : "1303"
+                    }, 
+                    {
+                        "@ponto" : "34",
+                        "@id" : "2",
+                        "@frameInicial" : "1303",
+                        "@frameFinal" : "1309"
+                    }, 
+                    {
+                        "@ponto" : "35",
+                        "@id" : "3",
+                        "@frameInicial" : "1309",
+                        "@frameFinal" : "1328"
+                    }, 
+                    {
+                        "@ponto" : "36",
+                        "@id" : "5",
+                        "@frameInicial" : "1328",
+                        "@frameFinal" : "1363"
+                    }, 
+                    {
+                        "@ponto" : "37",
+                        "@id" : "3",
+                        "@frameInicial" : "1363",
+                        "@frameFinal" : "1427"
+                    }, 
+                    {
+                        "@ponto" : "38",
+                        "@id" : "2",
+                        "@frameInicial" : "1427",
+                        "@frameFinal" : "1440"
+                    }, 
+                    {
+                        "@ponto" : "39",
+                        "@id" : "3",
+                        "@frameInicial" : "1440",
+                        "@frameFinal" : "1462"
+                    }, 
+                    {
+                        "@ponto" : "40",
+                        "@id" : "2",
+                        "@frameInicial" : "1462",
+                        "@frameFinal" : "1471"
+                    }, 
+                    {
+                        "@ponto" : "41",
+                        "@id" : "5",
+                        "@frameInicial" : "1471",
+                        "@frameFinal" : "1533"
+                    }, 
+                    {
+                        "@ponto" : "42",
+                        "@id" : "4",
+                        "@frameInicial" : "1533",
+                        "@frameFinal" : "1756"
+                    }, 
+                    {
+                        "@ponto" : "43",
+                        "@id" : "3",
+                        "@frameInicial" : "1756",
+                        "@frameFinal" : "1901"
+                    }, 
+                    {
+                        "@ponto" : "44",
+                        "@id" : "4",
+                        "@frameInicial" : "1901",
+                        "@frameFinal" : "1982"
+                    }, 
+                    {
+                        "@ponto" : "45",
+                        "@id" : "3",
+                        "@frameInicial" : "1982",
+                        "@frameFinal" : "2007"
+                    }, 
+                    {
+                        "@ponto" : "46",
+                        "@id" : "1",
+                        "@frameInicial" : "2007",
+                        "@frameFinal" : "2167"
+                    }, 
+                    {
+                        "@ponto" : "47",
+                        "@id" : "5",
+                        "@frameInicial" : "2167",
+                        "@frameFinal" : "2187"
+                    }, 
+                    {
+                        "@ponto" : "48",
+                        "@id" : "4",
+                        "@frameInicial" : "2187",
+                        "@frameFinal" : "2230"
+                    }, 
+                    {
+                        "@ponto" : "49",
+                        "@id" : "5",
+                        "@frameInicial" : "2230",
+                        "@frameFinal" : "2268"
+                    }, 
+                    {
+                        "@ponto" : "50",
+                        "@id" : "4",
+                        "@frameInicial" : "2268",
+                        "@frameFinal" : "2293"
+                    }, 
+                    {
+                        "@ponto" : "51",
+                        "@id" : "5",
+                        "@frameInicial" : "2293",
+                        "@frameFinal" : "2554"
+                    }, 
+                    {
+                        "@ponto" : "52",
+                        "@id" : "3",
+                        "@frameInicial" : "2554",
+                        "@frameFinal" : "2574"
+                    }, 
+                    {
+                        "@ponto" : "53",
+                        "@id" : "2",
+                        "@frameInicial" : "2574",
+                        "@frameFinal" : "2582"
+                    }, 
+                    {
+                        "@ponto" : "54",
+                        "@id" : "3",
+                        "@frameInicial" : "2582",
+                        "@frameFinal" : "2615"
+                    }, 
+                    {
+                        "@ponto" : "55",
+                        "@id" : "2",
+                        "@frameInicial" : "2615",
+                        "@frameFinal" : "2628"
+                    }, 
+                    {
+                        "@ponto" : "56",
+                        "@id" : "3",
+                        "@frameInicial" : "2628",
+                        "@frameFinal" : "2697"
+                    }, 
+                    {
+                        "@ponto" : "57",
+                        "@id" : "2",
+                        "@frameInicial" : "2697",
+                        "@frameFinal" : "2706"
+                    }, 
+                    {
+                        "@ponto" : "58",
+                        "@id" : "3",
+                        "@frameInicial" : "2706",
+                        "@frameFinal" : "2743"
+                    }, 
+                    {
+                        "@ponto" : "59",
+                        "@id" : "4",
+                        "@frameInicial" : "2743",
+                        "@frameFinal" : "2834"
+                    }, 
+                    {
+                        "@ponto" : "60",
+                        "@id" : "3",
+                        "@frameInicial" : "2834",
+                        "@frameFinal" : "2857"
+                    }, 
+                    {
+                        "@ponto" : "61",
+                        "@id" : "2",
+                        "@frameInicial" : "2857",
+                        "@frameFinal" : "2871"
+                    }, 
+                    {
+                        "@ponto" : "62",
+                        "@id" : "3",
+                        "@frameInicial" : "2871",
+                        "@frameFinal" : "2904"
+                    }, 
+                    {
+                        "@ponto" : "63",
+                        "@id" : "2",
+                        "@frameInicial" : "2904",
+                        "@frameFinal" : "2917"
+                    }, 
+                    {
+                        "@ponto" : "64",
+                        "@id" : "3",
+                        "@frameInicial" : "2917",
+                        "@frameFinal" : "2935"
+                    }, 
+                    {
+                        "@ponto" : "65",
+                        "@id" : "0",
+                        "@frameInicial" : "2935",
+                        "@frameFinal" : "2937"
+                    }, 
+                    {
+                        "@ponto" : "66",
+                        "@id" : "3",
+                        "@frameInicial" : "2937",
+                        "@frameFinal" : "2954"
+                    }, 
+                    {
+                        "@ponto" : "67",
+                        "@id" : "2",
+                        "@frameInicial" : "2954",
+                        "@frameFinal" : "2962"
+                    }, 
+                    {
+                        "@ponto" : "68",
+                        "@id" : "3",
+                        "@frameInicial" : "2962",
+                        "@frameFinal" : "2984"
+                    }, 
+                    {
+                        "@ponto" : "69",
+                        "@id" : "4",
+                        "@frameInicial" : "2984",
+                        "@frameFinal" : "3135"
+                    }, 
+                    {
+                        "@ponto" : "70",
+                        "@id" : "3",
+                        "@frameInicial" : "3135",
+                        "@frameFinal" : "3182"
+                    }, 
+                    {
+                        "@ponto" : "71",
+                        "@id" : "2",
+                        "@frameInicial" : "3182",
+                        "@frameFinal" : "3188"
+                    }, 
+                    {
+                        "@ponto" : "72",
+                        "@id" : "3",
+                        "@frameInicial" : "3188",
+                        "@frameFinal" : "3208"
+                    }, 
+                    {
+                        "@ponto" : "73",
+                        "@id" : "2",
+                        "@frameInicial" : "3208",
+                        "@frameFinal" : "3213"
+                    }, 
+                    {
+                        "@ponto" : "74",
+                        "@id" : "3",
+                        "@frameInicial" : "3213",
+                        "@frameFinal" : "3232"
+                    }, 
+                    {
+                        "@ponto" : "75",
+                        "@id" : "2",
+                        "@frameInicial" : "3232",
+                        "@frameFinal" : "3239"
+                    }, 
+                    {
+                        "@ponto" : "76",
+                        "@id" : "3",
+                        "@frameInicial" : "3239",
+                        "@frameFinal" : "3344"
+                    }, 
+                    {
+                        "@ponto" : "77",
+                        "@id" : "4",
+                        "@frameInicial" : "3344",
+                        "@frameFinal" : "3426"
+                    }, 
+                    {
+                        "@ponto" : "78",
+                        "@id" : "3",
+                        "@frameInicial" : "3426",
+                        "@frameFinal" : "3499"
+                    }, 
+                    {
+                        "@ponto" : "79",
+                        "@id" : "2",
+                        "@frameInicial" : "3499",
+                        "@frameFinal" : "3508"
+                    }, 
+                    {
+                        "@ponto" : "80",
+                        "@id" : "3",
+                        "@frameInicial" : "3508",
+                        "@frameFinal" : "3558"
+                    }, 
+                    {
+                        "@ponto" : "81",
+                        "@id" : "2",
+                        "@frameInicial" : "3558",
+                        "@frameFinal" : "3569"
+                    }, 
+                    {
+                        "@ponto" : "82",
+                        "@id" : "3",
+                        "@frameInicial" : "3569",
+                        "@frameFinal" : "3598"
+                    }, 
+                    {
+                        "@ponto" : "83",
+                        "@id" : "2",
+                        "@frameInicial" : "3598",
+                        "@frameFinal" : "3613"
+                    }, 
+                    {
+                        "@ponto" : "84",
+                        "@id" : "3",
+                        "@frameInicial" : "3613",
+                        "@frameFinal" : "3708"
+                    }, 
+                    {
+                        "@ponto" : "85",
+                        "@id" : "0",
+                        "@frameInicial" : "3708",
+                        "@frameFinal" : "3711"
+                    }, 
+                    {
+                        "@ponto" : "86",
+                        "@id" : "3",
+                        "@frameInicial" : "3711",
+                        "@frameFinal" : "3718"
+                    }, 
+                    {
+                        "@ponto" : "87",
+                        "@id" : "2",
+                        "@frameInicial" : "3718",
+                        "@frameFinal" : "3728"
+                    }, 
+                    {
+                        "@ponto" : "88",
+                        "@id" : "3",
+                        "@frameInicial" : "3728",
+                        "@frameFinal" : "3748"
+                    }, 
+                    {
+                        "@ponto" : "89",
+                        "@id" : "2",
+                        "@frameInicial" : "3748",
+                        "@frameFinal" : "3756"
+                    }, 
+                    {
+                        "@ponto" : "90",
+                        "@id" : "3",
+                        "@frameInicial" : "3756",
+                        "@frameFinal" : "3819"
+                    }, 
+                    {
+                        "@ponto" : "91",
+                        "@id" : "1",
+                        "@frameInicial" : "3819",
+                        "@frameFinal" : "3830"
+                    }, 
+                    {
+                        "@ponto" : "92",
+                        "@id" : "5",
+                        "@frameInicial" : "3830",
+                        "@frameFinal" : "3871"
+                    }, 
+                    {
+                        "@ponto" : "93",
+                        "@id" : "3",
+                        "@frameInicial" : "3871",
+                        "@frameFinal" : "3900"
+                    }, 
+                    {
+                        "@ponto" : "94",
+                        "@id" : "2",
+                        "@frameInicial" : "3900",
+                        "@frameFinal" : "3909"
+                    }, 
+                    {
+                        "@ponto" : "95",
+                        "@id" : "3",
+                        "@frameInicial" : "3909",
+                        "@frameFinal" : "3926"
+                    }, 
+                    {
+                        "@ponto" : "96",
+                        "@id" : "4",
+                        "@frameInicial" : "3926",
+                        "@frameFinal" : "4000"
+                    }, 
+                    {
+                        "@ponto" : "97",
+                        "@id" : "3",
+                        "@frameInicial" : "4000",
+                        "@frameFinal" : "4023"
+                    }, 
+                    {
+                        "@ponto" : "98",
+                        "@id" : "0",
+                        "@frameInicial" : "4023",
+                        "@frameFinal" : "4025"
+                    }, 
+                    {
+                        "@ponto" : "99",
+                        "@id" : "3",
+                        "@frameInicial" : "4025",
+                        "@frameFinal" : "4047"
+                    }, 
+                    {
+                        "@ponto" : "100",
+                        "@id" : "2",
+                        "@frameInicial" : "4047",
+                        "@frameFinal" : "4085"
+                    }, 
+                    {
+                        "@ponto" : "101",
+                        "@id" : "3",
+                        "@frameInicial" : "4085",
+                        "@frameFinal" : "4150"
+                    }, 
+                    {
+                        "@ponto" : "102",
+                        "@id" : "5",
+                        "@frameInicial" : "4150",
+                        "@frameFinal" : "4156"
+                    }, 
+                    {
+                        "@ponto" : "103",
+                        "@id" : "3",
+                        "@frameInicial" : "4156",
+                        "@frameFinal" : "4172"
+                    }, 
+                    {
+                        "@ponto" : "104",
+                        "@id" : "5",
+                        "@frameInicial" : "4172",
+                        "@frameFinal" : "4227"
+                    }, 
+                    {
+                        "@ponto" : "105",
+                        "@id" : "3",
+                        "@frameInicial" : "4227",
+                        "@frameFinal" : "4243"
+                    }, 
+                    {
+                        "@ponto" : "106",
+                        "@id" : "5",
+                        "@frameInicial" : "4243",
+                        "@frameFinal" : "4304"
+                    }, 
+                    {
+                        "@ponto" : "107",
+                        "@id" : "4",
+                        "@frameInicial" : "4304",
+                        "@frameFinal" : "4375"
+                    }, 
+                    {
+                        "@ponto" : "108",
+                        "@id" : "3",
+                        "@frameInicial" : "4375",
+                        "@frameFinal" : "4382"
+                    }, 
+                    {
+                        "@ponto" : "109",
+                        "@id" : "5",
+                        "@frameInicial" : "4382",
+                        "@frameFinal" : "4400"
+                    }, 
+                    {
+                        "@ponto" : "110",
+                        "@id" : "3",
+                        "@frameInicial" : "4400",
+                        "@frameFinal" : "4474"
+                    }, 
+                    {
+                        "@ponto" : "111",
+                        "@id" : "0",
+                        "@frameInicial" : "4474",
+                        "@frameFinal" : "4476"
+                    }, 
+                    {
+                        "@ponto" : "112",
+                        "@id" : "3",
+                        "@frameInicial" : "4476",
+                        "@frameFinal" : "4486"
+                    }, 
+                    {
+                        "@ponto" : "113",
+                        "@id" : "2",
+                        "@frameInicial" : "4486",
+                        "@frameFinal" : "4494"
+                    }, 
+                    {
+                        "@ponto" : "114",
+                        "@id" : "0",
+                        "@frameInicial" : "4494",
+                        "@frameFinal" : "4494"
+                    }, 
+                    {
+                        "@ponto" : "115",
+                        "@id" : "3",
+                        "@frameInicial" : "4494",
+                        "@frameFinal" : "4512"
+                    }, 
+                    {
+                        "@ponto" : "116",
+                        "@id" : "0",
+                        "@frameInicial" : "4512",
+                        "@frameFinal" : "4514"
+                    }, 
+                    {
+                        "@ponto" : "117",
+                        "@id" : "3",
+                        "@frameInicial" : "4514",
+                        "@frameFinal" : "4530"
+                    }, 
+                    {
+                        "@ponto" : "118",
+                        "@id" : "2",
+                        "@frameInicial" : "4530",
+                        "@frameFinal" : "4551"
+                    }, 
+                    {
+                        "@ponto" : "119",
+                        "@id" : "3",
+                        "@frameInicial" : "4551",
+                        "@frameFinal" : "4574"
+                    }, 
+                    {
+                        "@ponto" : "120",
+                        "@id" : "4",
+                        "@frameInicial" : "4574",
+                        "@frameFinal" : "4681"
+                    }, 
+                    {
+                        "@ponto" : "121",
+                        "@id" : "3",
+                        "@frameInicial" : "4681",
+                        "@frameFinal" : "4741"
+                    }, 
+                    {
+                        "@ponto" : "122",
+                        "@id" : "2",
+                        "@frameInicial" : "4741",
+                        "@frameFinal" : "4754"
+                    }, 
+                    {
+                        "@ponto" : "123",
+                        "@id" : "3",
+                        "@frameInicial" : "4754",
+                        "@frameFinal" : "4811"
+                    }, 
+                    {
+                        "@ponto" : "124",
+                        "@id" : "2",
+                        "@frameInicial" : "4811",
+                        "@frameFinal" : "4823"
+                    }, 
+                    {
+                        "@ponto" : "125",
+                        "@id" : "3",
+                        "@frameInicial" : "4823",
+                        "@frameFinal" : "4858"
+                    }, 
+                    {
+                        "@ponto" : "126",
+                        "@id" : "2",
+                        "@frameInicial" : "4858",
+                        "@frameFinal" : "4870"
+                    }, 
+                    {
+                        "@ponto" : "127",
+                        "@id" : "3",
+                        "@frameInicial" : "4870",
+                        "@frameFinal" : "4903"
+                    }, 
+                    {
+                        "@ponto" : "128",
+                        "@id" : "4",
+                        "@frameInicial" : "4903",
+                        "@frameFinal" : "5021"
+                    }, 
+                    {
+                        "@ponto" : "129",
+                        "@id" : "5",
+                        "@frameInicial" : "5021",
+                        "@frameFinal" : "5032"
+                    }, 
+                    {
+                        "@ponto" : "130",
+                        "@id" : "3",
+                        "@frameInicial" : "5032",
+                        "@frameFinal" : "5057"
+                    }, 
+                    {
+                        "@ponto" : "131",
+                        "@id" : "0",
+                        "@frameInicial" : "5057",
+                        "@frameFinal" : "5059"
+                    }, 
+                    {
+                        "@ponto" : "132",
+                        "@id" : "3",
+                        "@frameInicial" : "5059",
+                        "@frameFinal" : "5078"
+                    }, 
+                    {
+                        "@ponto" : "133",
+                        "@id" : "0",
+                        "@frameInicial" : "5078",
+                        "@frameFinal" : "5080"
+                    }, 
+                    {
+                        "@ponto" : "134",
+                        "@id" : "3",
+                        "@frameInicial" : "5080",
+                        "@frameFinal" : "5140"
+                    }, 
+                    {
+                        "@ponto" : "135",
+                        "@id" : "4",
+                        "@frameInicial" : "5140",
+                        "@frameFinal" : "5179"
+                    }, 
+                    {
+                        "@ponto" : "136",
+                        "@id" : "3",
+                        "@frameInicial" : "5179",
+                        "@frameFinal" : "5238"
+                    }, 
+                    {
+                        "@ponto" : "137",
+                        "@id" : "2",
+                        "@frameInicial" : "5238",
+                        "@frameFinal" : "5251"
+                    }, 
+                    {
+                        "@ponto" : "138",
+                        "@id" : "3",
+                        "@frameInicial" : "5251",
+                        "@frameFinal" : "5269"
+                    }, 
+                    {
+                        "@ponto" : "139",
+                        "@id" : "0",
+                        "@frameInicial" : "5269",
+                        "@frameFinal" : "5271"
+                    }, 
+                    {
+                        "@ponto" : "140",
+                        "@id" : "3",
+                        "@frameInicial" : "5271",
+                        "@frameFinal" : "5289"
+                    }, 
+                    {
+                        "@ponto" : "141",
+                        "@id" : "2",
+                        "@frameInicial" : "5289",
+                        "@frameFinal" : "5297"
+                    }, 
+                    {
+                        "@ponto" : "142",
+                        "@id" : "3",
+                        "@frameInicial" : "5297",
+                        "@frameFinal" : "5310"
+                    }, 
+                    {
+                        "@ponto" : "143",
+                        "@id" : "0",
+                        "@frameInicial" : "5310",
+                        "@frameFinal" : "5313"
+                    }, 
+                    {
+                        "@ponto" : "144",
+                        "@id" : "3",
+                        "@frameInicial" : "5313",
+                        "@frameFinal" : "5333"
+                    }, 
+                    {
+                        "@ponto" : "145",
+                        "@id" : "4",
+                        "@frameInicial" : "5333",
+                        "@frameFinal" : "5492"
+                    }, 
+                    {
+                        "@ponto" : "146",
+                        "@id" : "3",
+                        "@frameInicial" : "5492",
+                        "@frameFinal" : "5560"
+                    }, 
+                    {
+                        "@ponto" : "147",
+                        "@id" : "4",
+                        "@frameInicial" : "5560",
+                        "@frameFinal" : "5686"
+                    }, 
+                    {
+                        "@ponto" : "148",
+                        "@id" : "3",
+                        "@frameInicial" : "5686",
+                        "@frameFinal" : "5733"
+                    }, 
+                    {
+                        "@ponto" : "149",
+                        "@id" : "2",
+                        "@frameInicial" : "5733",
+                        "@frameFinal" : "5742"
+                    }, 
+                    {
+                        "@ponto" : "150",
+                        "@id" : "3",
+                        "@frameInicial" : "5742",
+                        "@frameFinal" : "5825"
+                    }, 
+                    {
+                        "@ponto" : "151",
+                        "@id" : "2",
+                        "@frameInicial" : "5825",
+                        "@frameFinal" : "5835"
+                    }, 
+                    {
+                        "@ponto" : "152",
+                        "@id" : "3",
+                        "@frameInicial" : "5835",
+                        "@frameFinal" : "5870"
+                    }, 
+                    {
+                        "@ponto" : "153",
+                        "@id" : "2",
+                        "@frameInicial" : "5870",
+                        "@frameFinal" : "5877"
+                    }, 
+                    {
+                        "@ponto" : "154",
+                        "@id" : "3",
+                        "@frameInicial" : "5877",
+                        "@frameFinal" : "5921"
+                    }, 
+                    {
+                        "@ponto" : "155",
+                        "@id" : "4",
+                        "@frameInicial" : "5921",
+                        "@frameFinal" : "5979"
+                    }, 
+                    {
+                        "@ponto" : "156",
+                        "@id" : "3",
+                        "@frameInicial" : "5979",
+                        "@frameFinal" : "6059"
+                    }, 
+                    {
+                        "@ponto" : "157",
+                        "@id" : "2",
+                        "@frameInicial" : "6059",
+                        "@frameFinal" : "6071"
+                    }, 
+                    {
+                        "@ponto" : "158",
+                        "@id" : "3",
+                        "@frameInicial" : "6071",
+                        "@frameFinal" : "6101"
+                    }, 
+                    {
+                        "@ponto" : "159",
+                        "@id" : "2",
+                        "@frameInicial" : "6101",
+                        "@frameFinal" : "6108"
+                    }, 
+                    {
+                        "@ponto" : "160",
+                        "@id" : "3",
+                        "@frameInicial" : "6108",
+                        "@frameFinal" : "6131"
+                    }, 
+                    {
+                        "@ponto" : "161",
+                        "@id" : "4",
+                        "@frameInicial" : "6131",
+                        "@frameFinal" : "6219"
+                    }, 
+                    {
+                        "@ponto" : "162",
+                        "@id" : "3",
+                        "@frameInicial" : "6219",
+                        "@frameFinal" : "6268"
+                    }, 
+                    {
+                        "@ponto" : "163",
+                        "@id" : "2",
+                        "@frameInicial" : "6268",
+                        "@frameFinal" : "6280"
+                    }, 
+                    {
+                        "@ponto" : "164",
+                        "@id" : "3",
+                        "@frameInicial" : "6280",
+                        "@frameFinal" : "6309"
+                    }, 
+                    {
+                        "@ponto" : "165",
+                        "@id" : "4",
+                        "@frameInicial" : "6309",
+                        "@frameFinal" : "6427"
+                    }, 
+                    {
+                        "@ponto" : "166",
+                        "@id" : "3",
+                        "@frameInicial" : "6427",
+                        "@frameFinal" : "6446"
+                    }, 
+                    {
+                        "@ponto" : "167",
+                        "@id" : "2",
+                        "@frameInicial" : "6446",
+                        "@frameFinal" : "6452"
+                    }, 
+                    {
+                        "@ponto" : "168",
+                        "@id" : "3",
+                        "@frameInicial" : "6452",
+                        "@frameFinal" : "6496"
+                    }, 
+                    {
+                        "@ponto" : "169",
+                        "@id" : "2",
+                        "@frameInicial" : "6496",
+                        "@frameFinal" : "6505"
+                    }, 
+                    {
+                        "@ponto" : "170",
+                        "@id" : "3",
+                        "@frameInicial" : "6505",
+                        "@frameFinal" : "6558"
+                    }, 
+                    {
+                        "@ponto" : "171",
+                        "@id" : "4",
+                        "@frameInicial" : "6558",
+                        "@frameFinal" : "6575"
+                    }, 
+                    {
+                        "@ponto" : "172",
+                        "@id" : "3",
+                        "@frameInicial" : "6575",
+                        "@frameFinal" : "6621"
+                    }, 
+                    {
+                        "@ponto" : "173",
+                        "@id" : "4",
+                        "@frameInicial" : "6621",
+                        "@frameFinal" : "6865"
+                    }, 
+                    {
+                        "@ponto" : "174",
+                        "@id" : "3",
+                        "@frameInicial" : "6865",
+                        "@frameFinal" : "6891"
+                    }, 
+                    {
+                        "@ponto" : "175",
+                        "@id" : "0",
+                        "@frameInicial" : "6891",
+                        "@frameFinal" : "6895"
+                    }, 
+                    {
+                        "@ponto" : "176",
+                        "@id" : "3",
+                        "@frameInicial" : "6895",
+                        "@frameFinal" : "6904"
+                    }, 
+                    {
+                        "@ponto" : "177",
+                        "@id" : "4",
+                        "@frameInicial" : "6904",
+                        "@frameFinal" : "7005"
+                    }, 
+                    {
+                        "@ponto" : "178",
+                        "@id" : "3",
+                        "@frameInicial" : "7005",
+                        "@frameFinal" : "7062"
+                    }, 
+                    {
+                        "@ponto" : "179",
+                        "@id" : "4",
+                        "@frameInicial" : "7062",
+                        "@frameFinal" : "7194"
+                    }, 
+                    {
+                        "@ponto" : "180",
+                        "@id" : "3",
+                        "@frameInicial" : "7194",
+                        "@frameFinal" : "7242"
+                    }, 
+                    {
+                        "@ponto" : "181",
+                        "@id" : "2",
+                        "@frameInicial" : "7242",
+                        "@frameFinal" : "7249"
+                    }, 
+                    {
+                        "@ponto" : "182",
+                        "@id" : "3",
+                        "@frameInicial" : "7249",
+                        "@frameFinal" : "7277"
+                    }, 
+                    {
+                        "@ponto" : "183",
+                        "@id" : "4",
+                        "@frameInicial" : "7277",
+                        "@frameFinal" : "7732"
+                    }, 
+                    {
+                        "@ponto" : "184",
+                        "@id" : "5",
+                        "@frameInicial" : "7732",
+                        "@frameFinal" : "7741"
+                    }, 
+                    {
+                        "@ponto" : "185",
+                        "@id" : "3",
+                        "@frameInicial" : "7741",
+                        "@frameFinal" : "7772"
+                    }, 
+                    {
+                        "@ponto" : "186",
+                        "@id" : "0",
+                        "@frameInicial" : "7772",
+                        "@frameFinal" : "7775"
+                    }, 
+                    {
+                        "@ponto" : "187",
+                        "@id" : "3",
+                        "@frameInicial" : "7775",
+                        "@frameFinal" : "7824"
+                    }, 
+                    {
+                        "@ponto" : "188",
+                        "@id" : "0",
+                        "@frameInicial" : "7824",
+                        "@frameFinal" : "7825"
+                    }, 
+                    {
+                        "@ponto" : "189",
+                        "@id" : "3",
+                        "@frameInicial" : "7825",
+                        "@frameFinal" : "7852"
+                    }, 
+                    {
+                        "@ponto" : "190",
+                        "@id" : "2",
+                        "@frameInicial" : "7852",
+                        "@frameFinal" : "7868"
+                    }, 
+                    {
+                        "@ponto" : "191",
+                        "@id" : "0",
+                        "@frameInicial" : "7868",
+                        "@frameFinal" : "7868"
+                    }, 
+                    {
+                        "@ponto" : "192",
+                        "@id" : "3",
+                        "@frameInicial" : "7868",
+                        "@frameFinal" : "7870"
+                    }, 
+                    {
+                        "@ponto" : "193",
+                        "@id" : "0",
+                        "@frameInicial" : "7870",
+                        "@frameFinal" : "7878"
+                    }, 
+                    {
+                        "@ponto" : "194",
+                        "@id" : "3",
+                        "@frameInicial" : "7878",
+                        "@frameFinal" : "7918"
+                    }, 
+                    {
+                        "@ponto" : "195",
+                        "@id" : "4",
+                        "@frameInicial" : "7918",
+                        "@frameFinal" : "8038"
+                    }
+                ]
+            }
+        }
+    }
+}
