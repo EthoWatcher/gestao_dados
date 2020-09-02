@@ -1,6 +1,6 @@
 import json
-import src.parser_eto as par
-import src.eto_mongo as mg
+import deposito_watcher.parser_eto as par
+import deposito_watcher.eto_mongo as mg
 
 
 path_usuariso = "./modelo/1-usuarios.json"

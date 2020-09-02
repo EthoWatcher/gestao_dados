@@ -1,5 +1,5 @@
 import pandas as pd 
-import src.querys_feitas as qf
+import deposito_watcher.querys_feitas as qf
 
 
 class Fusao_variaveis():

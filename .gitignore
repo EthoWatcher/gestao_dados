@@ -3,3 +3,8 @@ __pycache__/*
 .pytest_cache/*
 .ipynb_checkpoints/*
 /bayes_estudo/.ipynb_checkpoints/*
+/build/*
+/tests/__pycache__/*
+/deposito_watcher/__pycache__/*
+/dist/*
+/deposito_watcher.egg-info/*

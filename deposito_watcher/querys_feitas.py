@@ -1,5 +1,5 @@
-import src.eto_mongo as et_m
-import src.etho_dados as et_d
+import deposito_watcher.eto_mongo as et_m
+import deposito_watcher.etho_dados as et_d
 from collections import OrderedDict 
 import pandas as pd 
 

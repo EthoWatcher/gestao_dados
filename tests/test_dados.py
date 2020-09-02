@@ -1,4 +1,4 @@
-import src.etho_dados as et_d
+import deposito_watcher.etho_dados as et_d
 import json
 
 

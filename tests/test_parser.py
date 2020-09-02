@@ -1,10 +1,10 @@
-from EW_preprocess_pkg import xml2json as pa
-import io
+# from EW_preprocess_pkg import xml2json as pa
+# import io
 
 
-def test_biblioteca():
-    f = open("./tests/examples/1e3z1h4.etoxml", "rb") 
-    parser = pa.Parse_XML(f)
+# def test_biblioteca():
+#     f = open("./tests/examples/1e3z1h4.etoxml", "rb") 
+#     parser = pa.Parse_XML(f)
 
 
 # def test_biblioteca_criando_arquivo_texto():

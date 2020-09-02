@@ -1,9 +1,11 @@
-import src.fusao_variaveis as fus
+import deposito_watcher.fusao_variaveis as fus
 import pandas as pd
 from bson.objectid import ObjectId
 
+
+ID_EXPERIMENTO ="5f4f8f39c66cad3eb1dd0d50"
 def test_fusa():
-    dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
+    dict_query = { "$and": [{"id_experimento": ObjectId(ID_EXPERIMENTO)}, 
                         {"var_ind.sexo":"macho"},{"$or": [{"var_ind.dosagem": "flx2.5mg"},
                                  {"var_ind.dosagem": "veiculo"} ]}
                         ]}
