@@ -16,3 +16,10 @@ Por enquanto, foi essa biblioteca que gerou o banco de dados "C:\dados_gian_mong
 Essa biblioteca precisa de algumas expansões para ser usada dentro de um sistema.
 
 
+# Comandos para fazer um novo pacote
+
+```
+python3 setup.py sdist bdist_wheel
+```
+https://packaging.python.org/tutorials/packaging-projects/
+
