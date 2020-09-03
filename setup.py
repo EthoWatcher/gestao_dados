@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name= "deposito_watcher", # Replace with your own username
     # package_dir= {'':'src'},
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(), # colocar o exclude aqui exclude=["/tests","/notebooks"] exclude=['tests']
     install_requires=["numpy>=1.16.2",
     "pymongo>=3.7.2",
     "scipy>=1.4.1",
