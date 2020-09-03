@@ -79,7 +79,7 @@ def test_exemplo(client):
 
 # Para que fique instalando a biblioteca
 
-Com o comando a baixo ele instala o pacote mas é necessario ter um setup.py. Todas vez que alterar muda os testes
+Com o comando a baixo ele instala o pacote mas é necessario ter um setup.py. Todas vez que alterar os arquivos ele re-intala
 ```
 python -m pip install -e .
 ```
