@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "C:\\Users\\zn_jo\\miniconda3\\envs\\doutorado\\python.exe",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
+}

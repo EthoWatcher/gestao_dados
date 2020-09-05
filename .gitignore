@@ -1,5 +1,5 @@
 __pycache__/*
-.vscode/*
+# .vscode/*
 .pytest_cache/*
 .ipynb_checkpoints/*
 /bayes_estudo/.ipynb_checkpoints/*
