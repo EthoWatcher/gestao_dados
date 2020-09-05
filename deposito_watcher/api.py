@@ -15,4 +15,22 @@ def get_usuario(usuario, senha):
     except:
         return False , None, ""
 
+
+def get_list_experimento(usuario_id):
+    try:
+        us = mg.Usuario()
+        us = us.get_by_hash(usuario_id) #us.get_by_hash("5ea1a77193f4d56a842f3a67")
+        
+        ex = mg.Experimento()
+        ex = ex.get_list_experimento_by_user(us)
+        documentos = []
+        for documento in ex.cliente.cursor:
+            documento["_id"] = str(documento["_id"])
+            documento["id_usuario"] = str(documento["id_usuario"])
+            documentos.append(documento)
+            
+
+        return True, documentos
+    except:
+        return False, []
     

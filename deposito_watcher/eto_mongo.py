@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-
+# quando precisa converter um hast to objetcid
 def hash2objectid(hashe):
     return ObjectId(hashe)
 
@@ -113,7 +113,12 @@ class Experimento():
         men_json["id_usuario"] = user.cliente.data["_id"]
         self.cliente.crete_file(men_json)
         return self
-        
+    def get_list_experimento_by_user(self, user):
+        ob_id_user = user.cliente.data["_id"]
+        cursor = self.cliente.col.find({"id_usuario": ob_id_user})
+        self.cliente.cursor = cursor
+        return self
+
     def get_by_exp_name(self, exp_name):
         data = self.cliente.col.find_one({"nome_banco_experimental": exp_name})
         self.cliente.data = data
