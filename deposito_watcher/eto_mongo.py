@@ -11,10 +11,31 @@ def objectid_to_hash(obj):
 
 class Cliente():
     def __init__(self, colecao="teste", bd="ethowatcher", ip="localhost", porta=27017):
-        self.mongo_client = MongoClient(ip, porta)
+
+        self.mongo_client = self._tenta_conexao(ip, porta) #MongoClient(ip, porta)
+
         self.db = self.mongo_client[bd]
         self.col = self.db[colecao]
         self.data = {}
+
+    def _tenta_conexao(self, ip, porta):
+        try:
+            conn = MongoClient(ip, porta, serverSelectionTimeoutMS = 2000)
+            conn.server_info()
+
+            if conn is None:
+                pass
+                # no connection, exit early
+                # raise Exception("Nao conseguiu conectar com o mongo")
+                # assert False
+            else:
+                return conn
+        except:
+            raise Exception("Nao conseguiu conectar com o mongo")
+
+        # finally:
+        #     return None
+
 
     def get_col(self):
         return self.col
@@ -92,6 +113,7 @@ class Experimento():
         men_json["id_usuario"] = user.cliente.data["_id"]
         self.cliente.crete_file(men_json)
         return self
+        
     def get_by_exp_name(self, exp_name):
         data = self.cliente.col.find_one({"nome_banco_experimental": exp_name})
         self.cliente.data = data
