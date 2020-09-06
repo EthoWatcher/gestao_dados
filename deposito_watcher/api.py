@@ -33,4 +33,21 @@ def get_list_experimento(usuario_id):
         return True, documentos
     except:
         return False, []
-    
+
+
+def get_exp_by_hash(hash_experimento, usuario_id):
+    try:
+        # tem que verificar se o experimento é do usuario
+        ex = mg.Experimento()
+        ex = ex.get_by_hash(hash_experimento)
+        data = ex.cliente.data
+        data["_id"] = str(data["_id"])
+        data["id_usuario"] = str(data["id_usuario"])
+        r_user_requisitiando = data["id_usuario"] == usuario_id
+
+        if r_user_requisitiando:
+            return True, data
+        else:
+            return False, {}
+    except:
+        return False, {}
