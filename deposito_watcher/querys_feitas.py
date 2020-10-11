@@ -188,7 +188,7 @@ class Construcao_descritor_etografia():
         return dic_saida
         
 
-    
+    # Pega todos os descritores da lista configurada
     def _get_descritores(self, etografia):
         li = []
         for descritor in self.lis_de_juncao:
@@ -206,8 +206,14 @@ class Construcao_descritor_etografia():
             return et_d.Descritores_q_inicio_categoria_etografia(etografia,"")
         elif nome == "q_final":
             return et_d.Descritores_q_fim_categoria_etografia(etografia,"")
+        elif nome == "q_inicio_analise":
+            return et_d.Descritores_inicio_analise(etografia,"")
+        elif nome == "fps":
+            return et_d.Descritores_fps(etografia,"")
         else:
             pass
+            # assert False
+            # raise("Nao implementado o descritor")
         
     
 

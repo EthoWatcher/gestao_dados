@@ -54,6 +54,21 @@ def test_descritor_latencia():
     lat = et_d.Descritor_latencia_expe_cate(e, "Swimming")
     print(lat.get_resultado())
 
+
+def test_descritor_inicio_analise():
+    dic = get_arquivo(path_eto)
+    e = et_d.Etografia(dic)
+    q_inicio_analise = et_d.Descritores_inicio_analise(e,"Immobility")
+    print(q_inicio_analise.get_resultado())
+
+def test_descritor_fps():
+    dic = get_arquivo(path_eto)
+    e = et_d.Etografia(dic)
+    q_inicio_analise = et_d.Descritores_fps(e,"Immobility")
+    print(q_inicio_analise.get_resultado())
+
+
+
 def test_descritor_todos():
     dic = get_arquivo(path_eto)
     e = et_d.Etografia(dic)
