@@ -9,8 +9,38 @@ class Descritor:
 
 # fusao descritor experimental com etografia ou 
 
-# fusao etografia com rastreamento
+class Descritores_fps(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'fps':self._calcula(), "info":f'Frames per second'}
 
+    def _calcula(self):
+        # tem que ter o tamanho da quantidade de trechos da etografia
+        def map_nome(anotaca):
+            return self.eto.dados_videos["fps"]
+        
+        fps =  list(map(map_nome, self.eto.anotacoes ))
+        # q_inicio_analise =  [self.eto.dados_videos["frameProces"]]
+        
+        return fps
+
+
+
+# fusao etografia com rastreamento
+class Descritores_inicio_analise(Descritor):
+    def __init__(self, etografia, categoria):
+        super().__init__(etografia, categoria)
+        self.resultado = {f'q_inicio_analise':self._calcula(), "info":f'Quadro inicial da analise'}
+
+    def _calcula(self):
+        # tem que ter o tamanho da quantidade de trechos da etografia
+        def map_nome(anotaca):
+            return self.eto.dados_videos["frameProces"]
+        
+        q_inicio_analise =  list(map(map_nome, self.eto.anotacoes ))
+        # q_inicio_analise =  [self.eto.dados_videos["frameProces"]]
+        
+        return q_inicio_analise
 
 
 class Descritores_nome_categoria_etografia(Descritor):

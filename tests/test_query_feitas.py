@@ -6,7 +6,7 @@ import pandas as pd
 
 
 # tem que ainda extrair manualmente 
-ID_EXPERIMENTO ="5f4e961293f4d554b0e1b1b5"
+ID_EXPERIMENTO ="5f4f8f39c66cad3eb1dd0d50"
 def test_fazer_querys():
     dict_query = { "$and": [{"id_experimento": ObjectId(ID_EXPERIMENTO)}, 
                         {"var_ind.sexo":"macho"},
