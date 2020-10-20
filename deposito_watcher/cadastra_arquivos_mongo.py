@@ -69,13 +69,16 @@ def create_usuario(login="jmarcolan", senha="1234", nome="joao", lab="ieb"):
     us = us.create_usuario(distros_dict[0])
 
 
-def creat_experimento(login_usuario):
+def creat_experimento(login_usuario, modelo_path=None):
     us = mg.Usuario()
     # us = us.get_by_hash("5f4e8c2c93f4d5509c58d3b4")
     us = us.get_by_login(login_usuario)
     ex = mg.Experimento()
-    # trocar por um que o usuario envia
-    distros_dict = get_modelos_prontos(path_experimento)
+
+    if modelo_path == None: # workaround para nao explodir os testes e manter a compatibilidade
+        distros_dict = get_modelos_prontos(path_experimento)
+    else:
+        distros_dict = get_arquivo(modelo_path)
 
 
     ex.create_experimento(distros_dict[0],us)
