@@ -2,14 +2,28 @@ import json
 import deposito_watcher.parser_eto as par
 import deposito_watcher.eto_mongo as mg
 
+# importar schemas
+# from json import load
+from pkg_resources import resource_stream
 
-path_usuariso = "./modelo/1-usuarios.json"
-path_juncao = "./modelo/3-juncoes.json"
-path_experimento = "./modelo/2-banco_experimental.json"
+# schema = load(resource_stream('exampleproject', 'data/schema.json'))
+
+path_usuariso = "modelo/1-usuarios.json"
+path_juncao = "modelo/3-juncoes.json"
+path_experimento = "modelo/2-banco_experimental.json"
 
 def get_arquivo(arquivo):
     with open(arquivo, 'r', encoding="utf-8") as f:
         distros_dict = json.load(f)
+    # f = open(arquivo, "rb")
+    return distros_dict
+
+
+def get_modelos_prontos(arquivo):
+    arquivo_texto = resource_stream("deposito_watcher",arquivo)
+    distros_dict = json.load(arquivo_texto)
+    # with open(arquivo, 'r', encoding="utf-8") as f:
+    #     distros_dict = json.load(f)
     # f = open(arquivo, "rb")
     return distros_dict
 
@@ -32,7 +46,7 @@ def envia_juncoes(path_experimento, name_exp):
         
         
         #constroi a juncao
-        distros_dict = get_arquivo(path_juncao)
+        distros_dict = get_modelos_prontos(path_juncao)
         doc_video, doc_eto, doc_ras = parse_documento(juncao)
         jc = mg.Juncao()
         #constroi a juncao e ja da update.
@@ -41,7 +55,11 @@ def envia_juncoes(path_experimento, name_exp):
 
 def create_usuario(login="jmarcolan", senha="1234", nome="joao", lab="ieb"):
     us = mg.Usuario()
-    distros_dict = get_arquivo(path_usuariso)
+    distros_dict = get_modelos_prontos(path_usuariso)
+    # distros_dict = [{"login":"", 
+    #                 "lab":"", 
+    #                 "nome":"",
+    #                 "senha":""}]
 
     distros_dict[0]["login"] = login
     distros_dict[0]["senha"] = senha
@@ -56,7 +74,10 @@ def creat_experimento(login_usuario):
     # us = us.get_by_hash("5f4e8c2c93f4d5509c58d3b4")
     us = us.get_by_login(login_usuario)
     ex = mg.Experimento()
-    distros_dict = get_arquivo(path_experimento)
+    # trocar por um que o usuario envia
+    distros_dict = get_modelos_prontos(path_experimento)
+
+
     ex.create_experimento(distros_dict[0],us)
 
 
