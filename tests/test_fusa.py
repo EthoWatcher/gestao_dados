@@ -3,7 +3,7 @@ import pandas as pd
 from bson.objectid import ObjectId
 
 
-ID_EXPERIMENTO ="5ea1a82993f4d56ba41e567d"
+ID_EXPERIMENTO ="5f8f534fafd56c628fdd1441"
 def test_fusa():
     dict_query = { "$and": [{"id_experimento": ObjectId(ID_EXPERIMENTO)}, 
                         {"var_ind.sexo":"macho"},{"$or": [{"var_ind.dosagem": "flx2.5mg"},
