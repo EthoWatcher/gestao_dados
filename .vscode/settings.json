@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\zn_jo\\miniconda3\\envs\\doutorado\\python.exe",
+    "python.pythonPath": "C:\\Users\\zn_jo\\.conda\\envs\\doutorado_36\\python.exe",
     "python.testing.pytestArgs": [
         "tests"
     ],
