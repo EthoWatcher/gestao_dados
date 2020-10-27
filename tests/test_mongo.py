@@ -13,6 +13,10 @@ path_etoxml = "./tests/examples/1e3z1h4.etoxml"
 path_video = "./tests/examples/1e3z1h4.vxml"
 path_ras = "./tests/examples/1e3z1h4.tkin"
 
+
+ID_EXPERIMENTO = "5f8f534fafd56c628fdd1441"
+ID_USUARIO = "5f8f53bab31a74b521b69429"
+
 def get_arquivo(arquivo):
     with open(arquivo, 'r', encoding="utf-8") as f:
         distros_dict = json.load(f)
@@ -39,19 +43,19 @@ def test_get_ususario():
 
 def test_get_ususario_ob():
     us = mg.Usuario()
-    us = us.get_by_hash("5ea09ee693f4d54eac22fb05")
+    us = us.get_by_hash(ID_EXPERIMENTO)
     print(us)
     # us.get_usuario_id(ObjectId("5ea09ee693f4d54eac22fb05"))
     
 def test_get_atualiza():
     us = mg.Usuario()
-    us = us.get_by_hash("5ea09ee693f4d54eac22fb05")
+    us = us.get_by_hash(ID_USUARIO)
     us = us.atualiza({"nome": "rei dos codegos"})
     print(us)
 
 def test_curiosidade():
     us = mg.Usuario()
-    us.get_by_hash("5ea09ee693f4d54eac22fb05").atualiza({"nome": "rei dos 2"})
+    us.get_by_hash(ID_USUARIO).atualiza({"nome": "rei dos 2"})
 
 # Cria experimento ObjectId("5ea1a77193f4d56a842f3a67")
 def test_create_experimento():

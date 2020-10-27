@@ -6,13 +6,14 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name= "deposito_watcher", # Replace with your own username
     # package_dir= {'':'src'},
-    packages=setuptools.find_packages(), # colocar o exclude aqui exclude=["/tests","/notebooks"] exclude=['tests']
-    install_requires=["numpy>=1.16.2",
-    "pymongo>=3.7.2",
-    "scipy>=1.4.1",
-    "pandas>=0.25.0",
-    "xmltodict>=0.12.0"
-    ],
+    packages=setuptools.find_packages(exclude=("tests*","dados*", "notebooks*")), # colocar o exclude aqui exclude=["/tests","/notebooks"] exclude=['tests']
+    install_requires=[
+        "xmltodict",
+        "pymongo",
+        "numpy",
+        "scipy",
+        "pandas"],
+    scripts=['scripts/ergue_sgbd.py'],
     version="0.0.1",
     author="João Antônio Marcolan",
     author_email="jamarcolan@gmail.com",
@@ -25,4 +26,14 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    include_package_data=True,
+    package_data={"deposito_watcher": ["modelo/1-usuarios.json", # https://godatadriven.com/blog/a-practical-guide-to-using-setup-py/
+                    "modelo/2-banco_experimental.json",
+                    "modelo/3-juncoes.json"]
+    
+    }
+    # data_files =  [("modelo/1-usuarios.json",
+    #                 "modelo/2-banco_experimental.json",
+    #                 "modelo/3-juncoes.json"])
+
 )
