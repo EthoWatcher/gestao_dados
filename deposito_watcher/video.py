@@ -1,6 +1,14 @@
 
 import cv2
 
+class Tocador_video():
+    def __init__(self, experimento_path, video_id):
+        self.experimento_path = experimento_path
+        self.video_id = video_id
+
+
+
+
 def abre_video(name_path):
     cap = cv2.VideoCapture(name_path)
     i = 0
