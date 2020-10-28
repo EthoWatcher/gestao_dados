@@ -6,7 +6,7 @@ import pandas as pd
 
 
 # tem que ainda extrair manualmente 
-ID_EXPERIMENTO ="5f8f534fafd56c628fdd1441"
+ID_EXPERIMENTO ="5f8f5503d3d64947e0da22e0"
 def test_fazer_querys():
     dict_query = { "$and": [{"id_experimento": ObjectId(ID_EXPERIMENTO)}, 
                         {"var_ind.sexo":"macho"},
@@ -82,6 +82,25 @@ def test_query_juncao_des():
     # resultado = cdj.get_descritor(list(cursor))
     resultado = cdj.get_descritor()
     print(resultado)
+
+
+def test_query_juncao_des_id_video():
+    dict_query = { "$and": [{"id_experimento": ObjectId(ID_EXPERIMENTO)}, 
+                        {"var_ind.sexo":"macho"},
+                        {"var_ind.dosagem": "flx2.5mg"}]}
+
+    j = qf.Get_Juncoes(dict_query)
+    cursor = j.get_cursor()
+
+    lis_de_juncao = ["sexo", "dosagem", "unidade","id_video"]
+
+
+    cdj = qf.Constru_descritor_juncao(lis_de_juncao, dict_query)
+    # resultado = cdj.get_descritor(list(cursor))
+    resultado = cdj.get_descritor()
+    print(resultado)
+
+
     # df = pd.DataFrame(data)
     # print(df)
 

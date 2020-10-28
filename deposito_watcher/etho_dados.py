@@ -156,6 +156,18 @@ class Descritor_Juncao_experimento(Descritor):
             return ""
 
 
+class Descritor_Juncao_experimento_id_video(Descritor):
+    def __init__(self, junca_data, categoria):
+        super().__init__(junca_data, categoria)
+        self.resultado = {f'id_video':self._calcula(), "info":f'id_video'}
+
+    def _calcula(self):
+        return str(self.eto["id_video"])
+        # r_tem_no_dic = self.cat in self.eto["var_ind"]
+        # if r_tem_no_dic:
+        #     return self.eto["var_ind"][self.cat]
+        # else:
+        #     return ""
         
 
 # class Descritor_trecho(Descritor):

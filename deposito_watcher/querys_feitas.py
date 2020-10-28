@@ -302,7 +302,7 @@ class Constru_descritor_rastreamento():
 
 
 class Constru_descritor_juncao():
-    # lis_de_juncao = ["sexo", "dosagem", "unidade"]
+    # lis_de_juncao = ["sexo", "dosagem", "unidade", "id_video"]
     def __init__(self, lis_des_juncao, query):
         self.lis_de_juncao = lis_des_juncao
         self.dict_query = query
@@ -341,8 +341,11 @@ class Constru_descritor_juncao():
     def _get_descritores(self, juncao):
         li = []
         for descritor in self.lis_de_juncao:
-            d = self._get_proces(juncao, descritor)
-            li.append(d.resultado)
+            if descritor == "id_video":
+                li.append(et_d.Descritor_Juncao_experimento_id_video(juncao, "id_video").resultado)
+            else:
+                d = self._get_proces(juncao, descritor)
+                li.append(d.resultado)
         
         return li
 
