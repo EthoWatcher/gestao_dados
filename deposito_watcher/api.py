@@ -132,7 +132,7 @@ def constroi_a_query_inteira(hash_experimento, dict_query):
     
     return dict_template
 
-
+# https://colab.research.google.com/drive/1Te1yubf8wxnbN2wfgt6E4UPwvCMfWZqc#scrollTo=4KE_S4YkXvqO
 def get_list_rand_ano(id_experimento, qnt, nome_exper, qual_marcacao):
     try:
         marcacao_cursor = qf.Get_Marcacoes(id_experimento,nome_exper).get_cursor()
