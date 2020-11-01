@@ -271,7 +271,9 @@ class Marcacao():
         self.cliente.get_by_objid(objID)
         return self
     
-
+    def update(self, campos_atualiza):
+        self.cliente.up_file(campos_atualiza)
+        return self
 
 
         # pass

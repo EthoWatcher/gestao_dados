@@ -1,15 +1,71 @@
-[
-    {   
-        "id_usuario":"",
-        "nome_banco_experimental":"fluoxetina_gian",
-        "var_inde":[
-            {"nome":"sexo","categorias":["macho" ,"femea"]},
-            {"nome":"dosagem","categorias":["veiculo", "flx1mg","flx2.5mg","flx5mg"]},
-            {"nome":"unidade","categorias":["A1", "A2","A3","A4","A5","A6","A7","A8","A9"]}
-        ],
-        "var_depend":[
-            {"nome":"categoria_comportamental","categorias":["Swimming","Immobility", "Climbing", "Diving", "Headshaking", "Undefined"]}
+{
+    "_id" : ObjectId("5f8f5503d3d64947e0da22e0"),
+    "id_usuario" : ObjectId("5f8f5503d3d64947e0da22dd"),
+    "nome_banco_experimental" : "fluoxetina_gian",
+    "var_inde" : [ 
+        {
+            "nome" : "sexo",
+            "categorias" : [ 
+                "macho", 
+                "femea"
+            ]
+        }, 
+        {
+            "nome" : "dosagem",
+            "categorias" : [ 
+                "veiculo", 
+                "flx1mg", 
+                "flx2.5mg", 
+                "flx5mg"
+            ]
+        }, 
+        {
+            "nome" : "unidade",
+            "categorias" : [ 
+                "A1", 
+                "A2", 
+                "A3", 
+                "A4", 
+                "A5", 
+                "A6", 
+                "A7", 
+                "A8", 
+                "A9"
+            ]
+        }, 
+        {
+            "nome" : "analise",
+            "categorias" : [ 
+                "primeira", 
+                "segunda", 
+                "terceira", 
+                "quarta"
+            ]
+        }
+    ],
+    "var_depend" : [ 
+        {
+            "nome" : "categoria_comportamental",
+            "categorias" : [ 
+                "Swimming", 
+                "Immobility", 
+                "Climbing", 
+                "Diving", 
+                "Headshaking", 
+                "Undefined"
+            ]
+        }
+    ],
+    "list_banco_imagem" : [{
+        "nome": "localiza_animal",
+        "marcacoes" : {
+        "box" : {
+            "x" : 0,
+            "y" : 0,
+            "w" : 100,
+            "h" : 100,
+            "anotado" : false
+        }}}
         ]
-
-    }
-]
+    
+}

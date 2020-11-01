@@ -133,12 +133,12 @@ def constroi_a_query_inteira(hash_experimento, dict_query):
     return dict_template
 
 
-def get_list_rand_ano(id_experimento, qnt):
+def get_list_rand_ano(id_experimento, qnt, nome_exper, qual_marcacao):
     try:
-        marcacao_cursor = qf.Get_Marcacoes(id_experimento).get_cursor()
+        marcacao_cursor = qf.Get_Marcacoes(id_experimento,nome_exper).get_cursor()
         ls = []
         for marcacao in marcacao_cursor:
-            r_n_marcado = len(marcacao["marcacoes"]) == 0 
+            r_n_marcado =  not qual_marcacao in marcacao["marcacoes"] #len(marcacao["marcacoes"]) == 0 
             if r_n_marcado:
                 marcacao["id_experimento"] = str(marcacao["id_experimento"])
                 marcacao["_id"] = str(marcacao["_id"] )

@@ -1,7 +1,8 @@
 
 import deposito_watcher.api as api
+import deposito_watcher.eto_mongo as mg
 
-
+from bson.objectid import ObjectId
 
 def test_senha_correta():
     assert api.get_usuario("jmarcolan", 1234)[0]
@@ -30,14 +31,25 @@ def test_get_dados():
 def test_get_randon_juncao():
     get_20 = 20
     id_experimento = "5f8f5503d3d64947e0da22e0"
-    r_enco, ls = api.get_list_rand_ano(id_experimento,get_20)
+    nome_exper = "localiza_animal"
+    qual_marcacao = "box"
+    r_enco, ls = api.get_list_rand_ano(id_experimento,get_20,nome_exper,qual_marcacao )
     print(ls)
 
 
 def test_atualiza_marcacao():
-    id_marcacao = ""
-    marcacao = {}
-
+    id_marcacao = "5f9e336fbd51328d41f3bb20"
+    qual_marca = "box"
+    marcacao = { f"marcacoes.{qual_marca}" : {
+            "x" : 0,
+            "y" : 0,
+            "w" : 100,
+            "h" : 100,
+            "anotado" : False
+        }}
+    jc = mg.Marcacao()
+    nova = jc.get_by_hash(ObjectId(id_marcacao)).update(marcacao)
+    print(nova)
 
 
     

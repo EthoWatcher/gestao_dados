@@ -447,9 +447,10 @@ class Get_Juncoes():
         return self.cursor
 
 class Get_Marcacoes():
-    def __init__(self, id_experimento):
+    def __init__(self, id_experimento, nome):
         self.cli = et_m.Cliente(colecao="Marcacao")
-        self.query = {"id_experimento": ObjectId(id_experimento)}
+        
+        self.query = { "$and": [{"id_experimento": ObjectId(id_experimento)}, {"nome":nome}]}
         self.cursor = self.cli.query(self.query)
 
     def get_cursor(self):
