@@ -2,6 +2,7 @@ import deposito_watcher.eto_mongo as et_m
 import deposito_watcher.etho_dados as et_d
 from collections import OrderedDict 
 import pandas as pd 
+from bson.objectid import ObjectId
 
 class Transforma_Estrutura_Dados_Panda():
     def __init__(self, data_descritores):
@@ -445,3 +446,11 @@ class Get_Juncoes():
     def get_cursor(self):
         return self.cursor
 
+class Get_Marcacoes():
+    def __init__(self, id_experimento):
+        self.cli = et_m.Cliente(colecao="Marcacao")
+        self.query = {"id_experimento": ObjectId(id_experimento)}
+        self.cursor = self.cli.query(self.query)
+
+    def get_cursor(self):
+        return self.cursor

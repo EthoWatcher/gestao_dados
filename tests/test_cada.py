@@ -22,6 +22,7 @@ def test_envia_em_batch_arquivos():
 
 
 def test_envia_marcacoes():
+    # por enquanto é a unica forme de envia em batch as marcações
     with open(path_marcacao) as json_file: 
         marcacoes = json.load(json_file)
         c_a_m.creat_marcacoes(marcacoes)

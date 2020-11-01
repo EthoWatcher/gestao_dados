@@ -1,4 +1,6 @@
 import json
+from bson.objectid import ObjectId
+
 import deposito_watcher.parser_eto as par
 import deposito_watcher.eto_mongo as mg
 
@@ -93,7 +95,9 @@ def cadastra_batch_arquivos(path_experimento, login_usuario, name_exp):
 
 def creat_marcacoes(marcacaoes):
     marcacao_db = mg.Marcacao()
-    for marca_dic in marcacaoes:
+    # tem que vir o ID do experimento
+    for marca_dic in marcacaoes: 
+        marca_dic["id_experimento"] = ObjectId(marca_dic["id_experimento"])
         marcacao_db.create_marcacao(marca_dic)
     
 

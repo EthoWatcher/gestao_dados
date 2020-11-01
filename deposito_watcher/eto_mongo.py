@@ -263,9 +263,14 @@ class Marcacao():
         self.cliente.crete_file(json_mensagem)
         return self
 
+    def get_by_id_name(self, id_experimento):
+        data = self.cliente.col.find_one({"id_experimento": id_experimento})
+        self.cliente.data = data
+
     def get_by_hash(self, objID):
         self.cliente.get_by_objid(objID)
         return self
+    
 
 
 

@@ -5,6 +5,9 @@ import deposito_watcher.eto_mongo as mg
 from bson.objectid import ObjectId
 
 import deposito_watcher.fusao_variaveis as fus
+import deposito_watcher.querys_feitas as qf
+
+import numpy as np 
 
 def get_usuario(usuario, senha):
     try:
@@ -128,6 +131,30 @@ def constroi_a_query_inteira(hash_experimento, dict_query):
         dict_template["$and"].append(dict_dosagem)
     
     return dict_template
+
+
+def get_list_rand_ano(id_experimento, qnt):
+    try:
+        marcacao_cursor = qf.Get_Marcacoes(id_experimento).get_cursor()
+        ls = []
+        for marcacao in marcacao_cursor:
+            r_n_marcado = len(marcacao["marcacoes"]) == 0 
+            if r_n_marcado:
+                marcacao["id_experimento"] = str(marcacao["id_experimento"])
+                marcacao["_id"] = str(marcacao["_id"] )
+                ls.append(marcacao)
+
+        r_tem_qnt_marcacoes = len(ls) > qnt
+
+        if r_tem_qnt_marcacoes:    
+            return True, np.random.choice(ls, qnt, replace=False)
+        else:
+            return True, ls
+    except:
+        return False, None
+        # print(j)
+
+
 
 
 

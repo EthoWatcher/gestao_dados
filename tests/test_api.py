@@ -25,7 +25,20 @@ def test_get_dados():
     id_experimento = '5f4f8f39c66cad3eb1dd0d50'
     r_ecnotrn, df = api.get_csv_by_query(id_experimento, dict_saida)
 
-    
+
+
+def test_get_randon_juncao():
+    get_20 = 20
+    id_experimento = "5f8f5503d3d64947e0da22e0"
+    r_enco, ls = api.get_list_rand_ano(id_experimento,get_20)
+    print(ls)
+
+
+def test_atualiza_marcacao():
+    id_marcacao = ""
+    marcacao = {}
+
+
 
     
 
