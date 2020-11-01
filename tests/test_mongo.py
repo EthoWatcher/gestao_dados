@@ -8,6 +8,8 @@ import deposito_watcher.parser_eto as par
 path_usuariso = "./tests/examples/1-usuarios.json"
 path_experimento = "./tests/examples/2-banco_experimental.json"
 path_juncao = "./tests/examples/3-juncoes.json"
+path_marcacao = "./tests/examples/7-marcacao.json"
+
 
 path_etoxml = "./tests/examples/1e3z1h4.etoxml"
 path_video = "./tests/examples/1e3z1h4.vxml"
@@ -35,6 +37,7 @@ def test_cria_usuario():
     us = mg.Usuario()
     distros_dict = get_arquivo(path_usuariso)
     us = us.create_usuario(distros_dict)
+    
 
 def test_get_ususario():
     us = mg.Usuario()
