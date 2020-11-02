@@ -132,6 +132,19 @@ def constroi_a_query_inteira(hash_experimento, dict_query):
     
     return dict_template
 
+def get_config_marca_exp(id_experimento,nome_exper):
+    try:
+        exper_mongo  = mg.Experimento().get_by_hash(id_experimento)
+        l = list(filter(lambda marcacao: marcacao['nome'] == nome_exper, exper_mongo.cliente.data["list_banco_imagem"]))
+        if len(l) == 1:
+            marcacao_config = l[0]["marcacoes"]
+            quais_marcacoes = list(marcacao_config.keys())
+            return True, {"marcacao_config": marcacao_config, "quais_marcacoes":quais_marcacoes}
+        else:
+            return False, None
+    except:
+        return False, None
+
 # https://colab.research.google.com/drive/1Te1yubf8wxnbN2wfgt6E4UPwvCMfWZqc#scrollTo=4KE_S4YkXvqO
 def get_list_rand_ano(id_experimento, qnt, nome_exper, qual_marcacao):
     try:
@@ -147,15 +160,32 @@ def get_list_rand_ano(id_experimento, qnt, nome_exper, qual_marcacao):
         r_tem_qnt_marcacoes = len(ls) > qnt
 
         if r_tem_qnt_marcacoes:    
-            return True, np.random.choice(ls, qnt, replace=False)
+            return True, np.random.choice(ls, qnt, replace=False).tolist()
         else:
             return True, ls
+
     except:
         return False, None
         # print(j)
 
 
-
+# tem que modificar para ficar generico.
+def atualiza_marcacao(id_marcacao, qual_marca, marcacao):
+    # id_marcacao = "5f9e336fbd51328d41f3bb20"
+    # qual_marca = "box"
+    try:
+        marcacao_upd = { f"marcacoes.{qual_marca}" : {
+                "x" : marcacao["x"],
+                "y" : marcacao["y"],
+                "w" : marcacao["w"],
+                "h" : marcacao["h"],
+                "anotado" : True
+            }}
+        jc = mg.Marcacao()
+        nova = jc.get_by_hash(ObjectId(id_marcacao)).update(marcacao_upd)
+        return True, nova
+    except:
+        return False, None
 
 
     

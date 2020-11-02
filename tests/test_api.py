@@ -28,6 +28,11 @@ def test_get_dados():
 
 
 
+def test_get_config_marca_exp():
+    id_experimento = "5f8f5503d3d64947e0da22e0"
+    nome_marca = "localiza_animal"
+    r_ecntro, saida  = api.get_config_marca_exp(id_experimento, nome_marca)
+
 def test_get_randon_juncao():
     get_20 = 20
     id_experimento = "5f8f5503d3d64947e0da22e0"
@@ -40,16 +45,18 @@ def test_get_randon_juncao():
 def test_atualiza_marcacao():
     id_marcacao = "5f9e336fbd51328d41f3bb20"
     qual_marca = "box"
-    marcacao = { f"marcacoes.{qual_marca}" : {
+    marcacao= {
             "x" : 0,
             "y" : 0,
-            "w" : 100,
-            "h" : 100,
-            "anotado" : False
-        }}
-    jc = mg.Marcacao()
-    nova = jc.get_by_hash(ObjectId(id_marcacao)).update(marcacao)
-    print(nova)
+            "w" : 110,
+            "h" : 110,
+            "anotado" : True
+        }
+
+    api.atualiza_marcacao(id_marcacao,qual_marca,marcacao)
+    # jc = mg.Marcacao()
+    # nova = jc.get_by_hash(ObjectId(id_marcacao)).update(marcacao)
+    # print(nova)
 
 
     
