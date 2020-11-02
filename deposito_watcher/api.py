@@ -8,6 +8,7 @@ import deposito_watcher.fusao_variaveis as fus
 import deposito_watcher.querys_feitas as qf
 
 import numpy as np 
+import pandas as pd
 
 def get_usuario(usuario, senha):
     try:
@@ -189,3 +190,20 @@ def atualiza_marcacao(id_marcacao, qual_marca, marcacao):
 
 
     
+def get_pega_todas_marcacaoes(id_experimento, nome_exper, marcacao_nome):
+    marcacao_cursor = qf.Get_Marcacoes(id_experimento,nome_exper).get_cursor()
+    lis_marcacao = []
+    for marcacao in marcacao_cursor:
+        saida = {
+            "@f": marcacao["@f"],
+            "id_video": marcacao["id_video"],
+            "x": marcacao["marcacoes"][marcacao_nome]["x"],
+            "y": marcacao["marcacoes"][marcacao_nome]["y"],
+            "h": marcacao["marcacoes"][marcacao_nome]["h"],
+            "w": marcacao["marcacoes"][marcacao_nome]["w"],
+            }
+        lis_marcacao.append(saida)
+    
+    df_saida = pd.DataFrame(lis_marcacao)
+
+    return df_saida

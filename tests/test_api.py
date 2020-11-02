@@ -58,8 +58,12 @@ def test_atualiza_marcacao():
     # nova = jc.get_by_hash(ObjectId(id_marcacao)).update(marcacao)
     # print(nova)
 
-
-    
+def test_pega_dados():
+    nome_exper = "localiza_animal"
+    id_experimento = "5f8f5503d3d64947e0da22e0"
+    qual_marca = "box"
+    df_saida = api.get_pega_todas_marcacaoes(id_experimento, nome_exper, qual_marca)
+    print(df_saida)
 
 
     # dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 
