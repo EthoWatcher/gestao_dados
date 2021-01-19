@@ -15,7 +15,7 @@ setuptools.setup(
         "pandas",
         "opencv-python"],
     scripts=['scripts/ergue_sgbd.py'],
-    version="0.0.1",
+    version="0.1.0",
     author="João Antônio Marcolan",
     author_email="jamarcolan@gmail.com",
     description="Pacote para fazer a gestão dos dados comportamentais para o envio para o MongoDB",
