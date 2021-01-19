@@ -5,6 +5,10 @@ import deposito_watcher.eto_mongo as mg
 from bson.objectid import ObjectId
 
 import deposito_watcher.fusao_variaveis as fus
+import deposito_watcher.querys_feitas as qf
+
+import numpy as np 
+import pandas as pd
 
 def get_usuario(usuario, senha):
     try:
@@ -129,6 +133,78 @@ def constroi_a_query_inteira(hash_experimento, dict_query):
     
     return dict_template
 
+def get_config_marca_exp(id_experimento,nome_exper):
+    try:
+        exper_mongo  = mg.Experimento().get_by_hash(id_experimento)
+        l = list(filter(lambda marcacao: marcacao['nome'] == nome_exper, exper_mongo.cliente.data["list_banco_imagem"]))
+        if len(l) == 1:
+            marcacao_config = l[0]["marcacoes"]
+            quais_marcacoes = list(marcacao_config.keys())
+            return True, {"marcacao_config": marcacao_config, "quais_marcacoes":quais_marcacoes}
+        else:
+            return False, None
+    except:
+        return False, None
+
+# https://colab.research.google.com/drive/1Te1yubf8wxnbN2wfgt6E4UPwvCMfWZqc#scrollTo=4KE_S4YkXvqO
+def get_list_rand_ano(id_experimento, qnt, nome_exper, qual_marcacao):
+    try:
+        marcacao_cursor = qf.Get_Marcacoes(id_experimento,nome_exper).get_cursor()
+        ls = []
+        for marcacao in marcacao_cursor:
+            r_n_marcado =  not qual_marcacao in marcacao["marcacoes"] #len(marcacao["marcacoes"]) == 0 
+            if r_n_marcado:
+                marcacao["id_experimento"] = str(marcacao["id_experimento"])
+                marcacao["_id"] = str(marcacao["_id"] )
+                ls.append(marcacao)
+
+        r_tem_qnt_marcacoes = len(ls) > qnt
+
+        if r_tem_qnt_marcacoes:    
+            return True, np.random.choice(ls, qnt, replace=False).tolist()
+        else:
+            return True, ls
+
+    except:
+        return False, None
+        # print(j)
+
+
+# tem que modificar para ficar generico.
+def atualiza_marcacao(id_marcacao, qual_marca, marcacao):
+    # id_marcacao = "5f9e336fbd51328d41f3bb20"
+    # qual_marca = "box"
+    try:
+        marcacao_upd = { f"marcacoes.{qual_marca}" : {
+                "x" : marcacao["x"],
+                "y" : marcacao["y"],
+                "w" : marcacao["w"],
+                "h" : marcacao["h"],
+                "anotado" : True
+            }}
+        jc = mg.Marcacao()
+        nova = jc.get_by_hash(ObjectId(id_marcacao)).update(marcacao_upd)
+        return True, nova
+    except:
+        return False, None
 
 
     
+def get_pega_todas_marcacaoes(id_experimento, nome_exper, marcacao_nome):
+    marcacao_cursor = qf.Get_Marcacoes(id_experimento,nome_exper).get_cursor()
+    lis_marcacao = []
+    for marcacao in marcacao_cursor:
+        saida = {
+            "@f": marcacao["@f"],
+            "id_video": marcacao["id_video"],
+            "x": marcacao["marcacoes"][marcacao_nome]["x"],
+            "y": marcacao["marcacoes"][marcacao_nome]["y"],
+            "h": marcacao["marcacoes"][marcacao_nome]["h"],
+            "w": marcacao["marcacoes"][marcacao_nome]["w"],
+            "img_str_b64": marcacao["img_str_b64"]
+            }
+        lis_marcacao.append(saida)
+    
+    df_saida = pd.DataFrame(lis_marcacao)
+
+    return df_saida

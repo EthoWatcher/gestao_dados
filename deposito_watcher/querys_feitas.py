@@ -2,6 +2,7 @@ import deposito_watcher.eto_mongo as et_m
 import deposito_watcher.etho_dados as et_d
 from collections import OrderedDict 
 import pandas as pd 
+from bson.objectid import ObjectId
 
 class Transforma_Estrutura_Dados_Panda():
     def __init__(self, data_descritores):
@@ -302,7 +303,7 @@ class Constru_descritor_rastreamento():
 
 
 class Constru_descritor_juncao():
-    # lis_de_juncao = ["sexo", "dosagem", "unidade"]
+    # lis_de_juncao = ["sexo", "dosagem", "unidade", "id_video"]
     def __init__(self, lis_des_juncao, query):
         self.lis_de_juncao = lis_des_juncao
         self.dict_query = query
@@ -341,8 +342,11 @@ class Constru_descritor_juncao():
     def _get_descritores(self, juncao):
         li = []
         for descritor in self.lis_de_juncao:
-            d = self._get_proces(juncao, descritor)
-            li.append(d.resultado)
+            if descritor == "id_video":
+                li.append(et_d.Descritor_Juncao_experimento_id_video(juncao, "id_video").resultado)
+            else:
+                d = self._get_proces(juncao, descritor)
+                li.append(d.resultado)
         
         return li
 
@@ -442,3 +446,12 @@ class Get_Juncoes():
     def get_cursor(self):
         return self.cursor
 
+class Get_Marcacoes():
+    def __init__(self, id_experimento, nome):
+        self.cli = et_m.Cliente(colecao="Marcacao")
+        
+        self.query = { "$and": [{"id_experimento": ObjectId(id_experimento)}, {"nome":nome}]}
+        self.cursor = self.cli.query(self.query)
+
+    def get_cursor(self):
+        return self.cursor

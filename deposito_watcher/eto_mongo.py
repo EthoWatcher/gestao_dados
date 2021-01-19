@@ -253,7 +253,29 @@ class Video():
     def delete_video(self):
        self.cliente.del_file()
        return self
-        
+
+
+class Marcacao():
+    def __init__(self):
+        self.cliente = Cliente(colecao="Marcacao")
+
+    def create_marcacao(self, json_mensagem):
+        self.cliente.crete_file(json_mensagem)
+        return self
+
+    def get_by_id_name(self, id_experimento):
+        data = self.cliente.col.find_one({"id_experimento": id_experimento})
+        self.cliente.data = data
+
+    def get_by_hash(self, objID):
+        self.cliente.get_by_objid(objID)
+        return self
+    
+    def update(self, campos_atualiza):
+        self.cliente.up_file(campos_atualiza)
+        return self
+
+
         # pass
 class Etografia():
     def __init__(self):

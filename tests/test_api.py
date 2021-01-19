@@ -1,7 +1,8 @@
 
 import deposito_watcher.api as api
+import deposito_watcher.eto_mongo as mg
 
-
+from bson.objectid import ObjectId
 
 def test_senha_correta():
     assert api.get_usuario("jmarcolan", 1234)[0]
@@ -25,9 +26,44 @@ def test_get_dados():
     id_experimento = '5f4f8f39c66cad3eb1dd0d50'
     r_ecnotrn, df = api.get_csv_by_query(id_experimento, dict_saida)
 
-    
 
-    
+
+def test_get_config_marca_exp():
+    id_experimento = "5f8f5503d3d64947e0da22e0"
+    nome_marca = "localiza_animal"
+    r_ecntro, saida  = api.get_config_marca_exp(id_experimento, nome_marca)
+
+def test_get_randon_juncao():
+    get_20 = 20
+    id_experimento = "5f8f5503d3d64947e0da22e0"
+    nome_exper = "localiza_animal"
+    qual_marcacao = "box"
+    r_enco, ls = api.get_list_rand_ano(id_experimento,get_20,nome_exper,qual_marcacao )
+    print(ls)
+
+
+def test_atualiza_marcacao():
+    id_marcacao = "5f9e336fbd51328d41f3bb20"
+    qual_marca = "box"
+    marcacao= {
+            "x" : 0,
+            "y" : 0,
+            "w" : 110,
+            "h" : 110,
+            "anotado" : True
+        }
+
+    api.atualiza_marcacao(id_marcacao,qual_marca,marcacao)
+    # jc = mg.Marcacao()
+    # nova = jc.get_by_hash(ObjectId(id_marcacao)).update(marcacao)
+    # print(nova)
+
+def test_pega_dados():
+    nome_exper = "localiza_animal"
+    id_experimento = "5f8f5503d3d64947e0da22e0"
+    qual_marca = "box"
+    df_saida = api.get_pega_todas_marcacaoes(id_experimento, nome_exper, qual_marca)
+    print(df_saida)
 
 
     # dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 

@@ -83,6 +83,13 @@ def test_descritor_juncao_experimento():
      print(de.resultado)
 
 
+def test_descritor_juncao_experimento_id_video():
+     dic = get_arquivo(path_junca_teste)
+     de = et_d.Descritor_Juncao_experimento_id_video(dic,"sexo")
+     print(de.resultado)
+
+
+
 def test_descritor_nome_etografia():
     dic = get_arquivo(path_eto)
     e = et_d.Etografia(dic)
