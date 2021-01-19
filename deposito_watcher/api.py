@@ -201,6 +201,7 @@ def get_pega_todas_marcacaoes(id_experimento, nome_exper, marcacao_nome):
             "y": marcacao["marcacoes"][marcacao_nome]["y"],
             "h": marcacao["marcacoes"][marcacao_nome]["h"],
             "w": marcacao["marcacoes"][marcacao_nome]["w"],
+            "img_str_b64": marcacao["img_str_b64"]
             }
         lis_marcacao.append(saida)
     

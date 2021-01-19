@@ -35,15 +35,27 @@ def c_image_2_64(imagem):
     jpg_as_text = base64.b64encode(buffer)
     return jpg_as_text
 
+
+def c_image_text_bina(jpg_as_text_utf8):
+    jpg_as_text = jpg_as_text_utf8.encode("utf-8")
+    return jpg_as_text
+
 def c_64_2_image(jpg_as_text):
     jpg_original = base64.b64decode(jpg_as_text)
     return jpg_original
+
+
+
 
 def c_image_to_np(jpg_original):
     im_arr = np.frombuffer(jpg_original, dtype=np.uint8)  # im_arr is one-dim Numpy array
     img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
     return img 
 
+
+def conver_string_opencv_img(string_64_string):
+    ima = c_image_to_np(c_64_2_image(c_image_text_bina(string_64_string)))
+    return ima
 
 
 # def abre_video(name_path):
