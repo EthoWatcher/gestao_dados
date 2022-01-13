@@ -1,6 +1,7 @@
 
 import deposito_watcher.api as api
 import deposito_watcher.eto_mongo as mg
+import deposito_watcher.parser_eto as par
 
 from bson.objectid import ObjectId
 
@@ -64,6 +65,46 @@ def test_pega_dados():
     qual_marca = "box"
     df_saida = api.get_pega_todas_marcacaoes(id_experimento, nome_exper, qual_marca)
     print(df_saida)
+
+def test_pega_list_juncao():
+    id_experimento = "5f8f5503d3d64947e0da22e0"
+    resposta = api.get_list_juncao(id_experimento)
+    print(resposta)
+
+def test_create_experimento():
+    data = {}
+    data["nome_banco_experimental"] = "teste"
+    api.creat_experimento("5f8f5503d3d64947e0da22dd", data)
+
+def test_create_juncao():
+    api.create_juncao("61df0823c66d84974a791c4b")
+
+def test_up_juncao_eto():
+    path_etoxml = "./tests/examples/1e3z1h4.etoxml"
+    xml_text = par.parser_xml_file_as_text(path_etoxml)
+    api.update_juncao("61df0b4c3915224806eb3728",xml_text, r_eto=True)
+    
+def test_up_juncao_video():
+    path_video = "./tests/examples/1e3z1h4.vxml"
+    xml_text = par.parser_xml_file_as_text(path_video)
+    api.update_juncao("61df0b4c3915224806eb3728",xml_text, r_video=True)
+
+
+def test_up_juncao_ras():
+    path_ras = "./tests/examples/1e3z1h4.tkin"
+    xml_text = par.parser_xml_file_as_text(path_ras)
+    api.update_juncao("61df0b4c3915224806eb3728",xml_text, r_rast=True)
+
+def test_up_juncao_var_ind():
+    xml_text = {"sexo":"femea"}
+    api.update_juncao("61df0b4c3915224806eb3728",xml_text)
+
+
+
+
+if __name__== "__main__":
+    test_create_experimento()
+
 
 
     # dict_query = { "$and": [{"id_experimento": ObjectId("5ea1a82993f4d56ba41e567d")}, 

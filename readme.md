@@ -9,7 +9,7 @@ OS dados foram análisados pelo Gian.
 
 # Resultados
 
-Por enquanto, foi essa biblioteca que gerou o banco de dados "C:\dados_gian_mongo" e são elas que o notebooks apontam.
+Por enquanto, foi essa biblioteca que gerou o banco de dados "C:\dados_gian_mongo_arrumados" e são elas que o notebooks apontam.
 
 # Expansões
 
@@ -26,7 +26,7 @@ https://packaging.python.org/tutorials/packaging-projects/
 
 Outra forma de instalar é na pasta que esta o arquivo setup.py a linha :
 ```
-pip instal -e . 
+pip install -e . 
 ```
 
 O "-e" significa que vai ser dimanico para que fique atualizando

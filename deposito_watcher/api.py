@@ -6,9 +6,120 @@ from bson.objectid import ObjectId
 
 import deposito_watcher.fusao_variaveis as fus
 import deposito_watcher.querys_feitas as qf
+import deposito_watcher.parser_eto as par
 
 import numpy as np 
 import pandas as pd
+
+
+
+
+def create_usuario_by(data):
+    try:
+        usuadio_esquema = {"login": data["login"], 
+                            "lab": data["lab"], 
+                            "nome": data["nome"],
+                            "senha":data["senha"]}
+        us = mg.Usuario()
+        us = us.create_usuario(usuadio_esquema)
+        return True
+    except:
+        return False
+
+
+def deleta_usuario(usuario_hash):
+    try:
+        us = mg.Usuario()
+        us.get_by_hash(usuario_hash).deleta()
+        return True
+    except:
+        return False
+
+
+def delete_experimento(experimento_hash):
+    try:
+        ex = mg.Experimento()
+        ex.get_by_hash(experimento_hash).deleta()
+        return True
+    except:
+        return False
+
+def atualiza_experimento(experimento_hash, experimento):
+    try:
+        experimento.pop("_id", None)
+        experimento.pop("id_usuario", None)
+        ex = mg.Experimento()
+        ex.get_by_hash(experimento_hash).update_experimento(experimento)
+        return True
+    except:
+        return False
+
+    # pass
+
+def creat_experimento(usuario_hash, data):
+    try:
+        us = mg.Usuario()
+        us = us.get_by_hash(usuario_hash) # get_by_login("jmarcolan") #us.get_by_hash("5ea1a77193f4d56a842f3a67")
+        ex = mg.Experimento()
+        experimento = {   
+            "id_usuario":"",
+            "nome_banco_experimental":data["nome_banco_experimental"],
+            "var_inde":[
+                # {"texto_interface" : "Sexo do animal","nome":"sexo","categorias":["macho" ,"femea"]}
+                ],
+            "var_depend":[
+                {"texto_interface" : "Categorias comportamentais", "nome":"categoria_comportamental",
+                "categorias": [] # ["Swimming","Immobility", "Climbing", "Diving", "Headshaking", "Undefined"]
+                }
+            ]}
+
+        ex = ex.create_experimento(experimento,us)
+        return True
+    except:
+        return False
+
+
+def delete_experimento(experimento_hash):
+    try:
+        ex = mg.Experimento()
+        ex.get_by_hash(experimento_hash).deleta()
+    except:
+        return False
+
+def create_juncao(experimento_hash):
+    juncao = {"id_experimento":"",
+    "id_banco":"",
+    "id_video":"",
+    "id_eto":"",
+    "id_tra":"",
+    "var_ind":{}}
+
+    ex = mg.Experimento()
+    ex.get_by_hash(experimento_hash)
+    # ex.get_by_hash("5ea0dc9393f4d55b9813bc02")
+
+    jc = mg.Juncao()
+    jc.create_juncao(juncao,ex)
+
+
+def update_juncao(juncao_hash, xml_texto, r_video=False, r_eto=False, r_rast=False):
+    
+    jc = mg.Juncao()
+    r_update_var_ind = not r_video and not r_eto and not r_rast
+    if r_update_var_ind:
+        jc.get_by_hash(juncao_hash).update_var_inde(xml_texto)
+    if r_video:
+        doc_video = par.parser_xml_text_2_dict(xml_texto)
+        jc.get_by_hash(juncao_hash).update_video(doc_video)
+    if r_eto:
+        doc_video = par.parser_xml_text_2_dict(xml_texto)
+        jc.get_by_hash(juncao_hash).update_eto(doc_video)
+    if r_rast:
+        doc_video = par.parser_xml_text_2_dict(xml_texto)
+        jc.get_by_hash(juncao_hash).update_tra(doc_video)
+    
+
+
 
 def get_usuario(usuario, senha):
     try:
@@ -17,7 +128,7 @@ def get_usuario(usuario, senha):
         r_senha = us.cliente.data["senha"] == str(senha)
         user_id = str(us.cliente.data["_id"])
         nome_user = us.cliente.data["nome"] 
-        return r_senha, user_id
+        return r_senha, user_id, ""
         # return True
     except:
         return False , None, ""
@@ -40,6 +151,36 @@ def get_list_experimento(usuario_id):
         return True, documentos
     except:
         return False, []
+
+def get_list_juncao(experimento_hash):
+    try:
+        ex = mg.Experimento().get_by_hash(experimento_hash)
+        
+        jc = mg.Juncao().get_list_juncao_by_exp(ex)
+        documentos = []
+        for documento in jc.cliente.cursor:
+            documento["_id"] = str(documento["_id"])
+            documento["id_experimento"] = str(documento["id_experimento"])
+            documento["id_video"] = str(documento["id_video"])
+            r_tem_video = documento["id_video"] != ''
+
+            if(r_tem_video):
+                vi = mg.Video().get_by_hash(documento["id_video"])
+                documento["video_data"] = vi.cliente.data
+                documento["video_data"]["_id"] = str(documento["video_data"]["_id"])
+            else:
+                documento["video_data"] = {}
+
+            documento["id_eto"] = str(documento["id_eto"])
+            documento["id_tra"] = str(documento["id_tra"])
+            
+            documentos.append(documento)
+            
+        return True, documentos
+
+    except:
+        return False, []
+
 
 
 def get_exp_by_hash(hash_experimento, usuario_id):

@@ -113,6 +113,16 @@ class Experimento():
         men_json["id_usuario"] = user.cliente.data["_id"]
         self.cliente.crete_file(men_json)
         return self
+
+    def update_experimento(self, experimento):
+        # bastante permissivo.
+        self._atualiza_db(experimento)
+        return self
+
+    def _atualiza_db(self, campos_atualiza):
+        r_atualizo = self.cliente.up_file(campos_atualiza)
+
+
     def get_list_experimento_by_user(self, user):
         ob_id_user = user.cliente.data["_id"]
         cursor = self.cliente.col.find({"id_usuario": ob_id_user})
@@ -161,6 +171,12 @@ class Juncao():
     
     def update_var_inde(self, array_var_inde):
         self._atualiza_db({"var_ind": array_var_inde})
+        return self
+    
+    def get_list_juncao_by_exp(self, exp):
+        ob_id_exp = exp.cliente.data["_id"]
+        cursor = self.cliente.col.find({"id_experimento": ob_id_exp})
+        self.cliente.cursor = cursor
         return self
 
     # Dar uma limpada nesses métodos porque eles são muito parecido.
@@ -246,7 +262,8 @@ class Video():
   
 
     def get_by_hash(self, objID):
-        self.cliente.get_by_objid(objID)
+        # tinha um errro aqui get_by_objid
+        self.cliente.get_by_hash(objID)
         return self
 
 

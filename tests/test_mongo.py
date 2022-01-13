@@ -68,6 +68,21 @@ def test_create_experimento():
     distros_dict = get_arquivo(path_experimento)
     ex.create_experimento(distros_dict,us)
 
+def teste_atualiza_experimento():
+    ex = mg.Experimento()
+
+    experimento = {"nome_banco_experimental":"Teste",
+        "var_depend":[{"categorias":["teste_categoria_1","teste_categoria_2","teste_categoria_3"],
+        "nome":"categoria_comportamental","texto_interface":"Categorias comportamentais"}],
+        "var_inde":[{"categorias":["m1_cate_1","m1_cate_2","m1_cate_3"],"nome":"0","texto_interface":"teste_metadata_1"},
+                    {"categorias":["m2_cate_1 ","m2_cate_2","m2_cate_3"],"nome":"1","texto_interface":"teste_metadata_2"}]
+                    
+        #"_id":"61e060515ee98e36c6fba3f0",
+        # "id_usuario":"61e060305ee98e36c6fba3ea",
+                    }
+
+    ex.get_by_hash("61e060515ee98e36c6fba3f0").update_experimento(experimento)
+
 def test_get_experimento():
     ex = mg.Experimento()
     ex.get_by_exp_name("fluoxetina_gian")
