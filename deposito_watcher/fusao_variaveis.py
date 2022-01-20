@@ -12,6 +12,8 @@ class Fusao_variaveis():
         self.df_fundido = pd.DataFrame()
         self.l_dfs = []
 
+        self.li_str_categora =[]
+        self.li_str_descritores = []
 
     def set_variaveis_rastreamento(self, list_var_rastreamento):
         # list_var_rastreamento =["@Vd", "@Van"]
@@ -33,6 +35,8 @@ class Fusao_variaveis():
         # nome
         # li_str_descritores = ["duracao", "frequencia"]
         # li_str_categora = ["Immobility", "Swimming"]
+        self.li_str_categora = li_str_categora
+        self.li_str_descritores = li_str_descritores
         des_experimental = qf.Constru_descritor_experimental(li_str_descritores, li_str_categora, self.dict_query)
         self.df_descritores_eto = des_experimental.get_descritores_etografia()
 
@@ -48,11 +52,12 @@ class Fusao_variaveis():
         #     pass
 
     def _fund_eto_rast(self):
+        # AQUI Q TA COM PROBLEMAAAAA
         def filtra_pedaco(id_j, df):
             saida =  df[df['id_j']==id_j]
             return saida
 
-        
+        #pegando as jundeos
         valores_unicos = set(self.df_etografia["id_j"])
         self._arruma_df_eto()
 
@@ -100,11 +105,36 @@ class Fusao_variaveis():
                 return d
         saida = []
 
-        for index, row in self.df_etografia.iterrows():
+        # FALTA FILTRAR AQUI AS CATEGORIAS AQUI SERIA MUITOOOOO MAIS RAPIDO
+        # df_etografia
+        def filter_categorias(df_s):
+            qnt_categorias = len(self.li_str_categora)
+            r_segmetacao_categoria = qnt_categorias == 0
+
+            if r_segmetacao_categoria:
+                return df_s
+            else :
+                ls_categoria_qery = []
+                str_query = ""
+                for index, categoria in enumerate(self.li_str_categora):
+                    str_template = f'categoria == "{categoria}"'
+                    
+                    r_not_ultima = (qnt_categorias - 1) > index
+                    if r_not_ultima:
+                        str_query += str_template + " | "
+                    else:
+                        str_query += str_template
+            
+                df_ss = df_s.query(str_query)
+                return df_ss
+        
+        df_apenas_categorias_selecionadas = filter_categorias(self.df_etografia)
+        for index, row in df_apenas_categorias_selecionadas.iterrows():
             df = linha_to_df(row)
             r_df_existe = df.empty
             if not r_df_existe:
                 saida.append(df)
+
         self.df_etografia = pd.concat(saida)
 
 
@@ -126,10 +156,16 @@ class Fusao_variaveis():
         # isso daqui tem que ser melhorado mas me diverti escrevendo assim
         # amanha refatorar esse pedaco
         if r_existe_var_juncao:
+            # quando a pessoa seleciona "sexo, unidade"
             d_mesclar.append(self.df_juncao)
+
+
         if r_existe_var_des_exp:
+            # AQUI ESTA O DESCRITORES
             d_mesclar.append(self.df_descritores_eto)
+
         if r_existe_var_ras and r_existe_var_eto:
+            # pegando os dados de rastreamento
             d_mesclar.append(self._fund_eto_rast())
         elif r_existe_var_ras:
             d_mesclar.append(self.df_rastreamento)
@@ -146,6 +182,30 @@ class Fusao_variaveis():
             for df_merge in d_mesclar:
                 df_saida = self._fusao_by_id_j(df_saida, df_merge)
 
+            def filter_categorias(df_s):
+                qnt_categorias = len(self.li_str_categora)
+                r_segmetacao_categoria = qnt_categorias == 0
+
+                if r_segmetacao_categoria:
+                    return df_s
+                else :
+                    ls_categoria_qery = []
+                    str_query = ""
+                    for index, categoria in enumerate(self.li_str_categora):
+                        str_template = f'categoria == "{categoria}"'
+                        
+                        r_not_ultima = qnt_categorias - 1 < index
+                        if r_not_ultima:
+                            str_query += str_template + " | "
+                        else:
+                            str_query += str_template
+                
+                    df_ss = df_s.query(str_query)
+                    return df_ss
+            # apesar de filtar aqui ser menos arriscado, provavelmente deixa mais demorado        
+            # df_saida = filter_categorias(df_saida)
+
+            # df_saida = filter_categorias(df_saida)
             return df_saida
 
         else:

@@ -1,6 +1,7 @@
 """
 Arquivo que tem a api para o etho_smart
 """
+from operator import le
 import deposito_watcher.eto_mongo as mg
 from bson.objectid import ObjectId
 
@@ -10,6 +11,102 @@ import deposito_watcher.parser_eto as par
 
 import numpy as np 
 import pandas as pd
+
+
+def query_dados(ID_EX, dict_query, ls_categorias, ls_des_cate, ls_var_eto, ls_des_rast, lis_desc_juncao, list_des_texto_display=[]):
+    r_soment_tracking = len(ls_des_cate) == 0 and len(ls_var_eto) ==0
+    r_soment_categoria = len(ls_des_rast) == 0
+
+    if r_soment_tracking :
+        r_selecao_categoria = len(ls_categorias) !=0
+        if r_selecao_categoria:
+            fs = fus.Fusao_variaveis(dict_query)
+
+            fs.set_variaveis_rastreamento(ls_des_rast)
+            fs.set_variaveis_etografia(["nome"]) # tem q ter pelo menos o nome
+
+            r_descritor_juncao_ativa = len(lis_desc_juncao) !=0
+            if r_descritor_juncao_ativa:
+                fs.set_variaveis_juncao(lis_desc_juncao)
+
+
+            li_str_descritores = []
+            li_str_categora = ls_categorias # todas as categorias tem q colocar elas por escrito aqui
+            fs.set_variaveis_descritore_eto_experimento(li_str_descritores, li_str_categora)
+            df = fs.get_dados_fundidos()
+
+            if r_descritor_juncao_ativa:
+                # aqui as keys dos dis são 0, 1, 2,3 precisam retornar
+                pass
+
+
+            return True, df
+
+        else:
+            fs = fus.Fusao_variaveis(dict_query)
+            r_descritor_juncao_ativa = len(lis_desc_juncao) !=0
+            if r_descritor_juncao_ativa:
+                fs.set_variaveis_juncao(lis_desc_juncao)
+            
+
+            fs.set_variaveis_rastreamento(ls_des_rast)
+            df = fs.get_dados_fundidos()
+            
+            if r_descritor_juncao_ativa:
+                # aqui as keys dos dis são 0, 1, 2,3 precisam retornar
+                pass
+
+            return True, df
+
+    elif r_soment_categoria:
+        fs = fus.Fusao_variaveis(dict_query)
+
+        r_descritor_juncao_ativa = len(lis_desc_juncao) !=0
+        if r_descritor_juncao_ativa:
+            fs.set_variaveis_juncao(lis_desc_juncao)
+
+        # fs.set_variaveis_rastreamento(["@Vd"])
+        r_ls_var_eto_empty = len(ls_var_eto) ==0
+        if not r_ls_var_eto_empty:
+            fs.set_variaveis_etografia(ls_var_eto)
+
+        li_str_descritores = ls_des_cate
+        li_str_categora = ls_categorias # todas as categorias tem q colocar elas por escrito aqui
+        fs.set_variaveis_descritore_eto_experimento(li_str_descritores, li_str_categora)
+        df = fs.get_dados_fundidos()
+        
+        if r_descritor_juncao_ativa:
+            pass
+
+        return True, df
+
+    else:
+        fs = fus.Fusao_variaveis(dict_query)
+
+        r_descritor_juncao_ativa = len(lis_desc_juncao) !=0
+        if r_descritor_juncao_ativa:
+            fs.set_variaveis_juncao(lis_desc_juncao)
+
+        fs.set_variaveis_rastreamento(ls_des_rast)
+
+        r_ls_var_eto = len(ls_var_eto) != 0
+        if r_ls_var_eto:
+            r_nome = "nome" in ls_var_eto
+            if r_nome:
+                fs.set_variaveis_etografia(ls_var_eto)
+            else:
+                ls_var_eto.append("nome")
+                fs.set_variaveis_etografia(ls_var_eto)
+
+
+        li_str_descritores = ls_des_cate
+        li_str_categora = ls_categorias # todas as categorias tem q colocar elas por escrito aqui
+        fs.set_variaveis_descritore_eto_experimento(li_str_descritores, li_str_categora)
+        df = fs.get_dados_fundidos()
+        if r_descritor_juncao_ativa:
+            pass
+
+        return True, df
 
 
 
@@ -87,36 +184,50 @@ def delete_experimento(experimento_hash):
         return False
 
 def create_juncao(experimento_hash):
-    juncao = {"id_experimento":"",
-    "id_banco":"",
-    "id_video":"",
-    "id_eto":"",
-    "id_tra":"",
-    "var_ind":{}}
+    try:
+        juncao = {"id_experimento":"",
+        "id_banco":"",
+        "id_video":"",
+        "id_eto":"",
+        "id_tra":"",
+        "var_ind":{}}
 
-    ex = mg.Experimento()
-    ex.get_by_hash(experimento_hash)
-    # ex.get_by_hash("5ea0dc9393f4d55b9813bc02")
+        ex = mg.Experimento()
+        ex.get_by_hash(experimento_hash)
+        # ex.get_by_hash("5ea0dc9393f4d55b9813bc02")
 
-    jc = mg.Juncao()
-    jc.create_juncao(juncao,ex)
+        jc = mg.Juncao()
+        jc.create_juncao(juncao,ex)
+        return True
+    except:
+        return False
 
+def delete_juncao(juncao_hash):
+    try:
+        jc = mg.Juncao()
+        jc.get_by_hash(juncao_hash).deleta()
+        return True
+    except:
+        return False
 
 def update_juncao(juncao_hash, xml_texto, r_video=False, r_eto=False, r_rast=False):
-    
-    jc = mg.Juncao()
-    r_update_var_ind = not r_video and not r_eto and not r_rast
-    if r_update_var_ind:
-        jc.get_by_hash(juncao_hash).update_var_inde(xml_texto)
-    if r_video:
-        doc_video = par.parser_xml_text_2_dict(xml_texto)
-        jc.get_by_hash(juncao_hash).update_video(doc_video)
-    if r_eto:
-        doc_video = par.parser_xml_text_2_dict(xml_texto)
-        jc.get_by_hash(juncao_hash).update_eto(doc_video)
-    if r_rast:
-        doc_video = par.parser_xml_text_2_dict(xml_texto)
-        jc.get_by_hash(juncao_hash).update_tra(doc_video)
+    try:
+        jc = mg.Juncao()
+        r_update_var_ind = not r_video and not r_eto and not r_rast
+        if r_update_var_ind:
+            jc.get_by_hash(juncao_hash).update_var_inde(xml_texto)
+        if r_video:
+            doc_video = par.parser_xml_text_2_dict(xml_texto)
+            jc.get_by_hash(juncao_hash).update_video(doc_video)
+        if r_eto:
+            doc_video = par.parser_xml_text_2_dict(xml_texto)
+            jc.get_by_hash(juncao_hash).update_eto(doc_video)
+        if r_rast:
+            doc_video = par.parser_xml_text_2_dict(xml_texto)
+            jc.get_by_hash(juncao_hash).update_tra(doc_video)
+        return True
+    except:
+        return False
     
 
 
@@ -152,6 +263,34 @@ def get_list_experimento(usuario_id):
     except:
         return False, []
 
+
+def arruma_juncao(juncao_data):
+    juncao_data["_id"] = str(juncao_data["_id"])
+    juncao_data["id_experimento"] = str(juncao_data["id_experimento"])
+    juncao_data["id_video"] = str(juncao_data["id_video"])
+    r_tem_video = juncao_data["id_video"] != ''
+
+    if(r_tem_video):
+        vi = mg.Video().get_by_hash(juncao_data["id_video"])
+        juncao_data["video_data"] = vi.cliente.data
+        juncao_data["video_data"]["_id"] = str(juncao_data["video_data"]["_id"])
+    else:
+        juncao_data["video_data"] = {}
+
+    juncao_data["id_eto"] = str(juncao_data["id_eto"])
+    juncao_data["id_tra"] = str(juncao_data["id_tra"])
+
+    return juncao_data
+
+def get_juncao_by_hash(juncao_hash):
+    try:
+        jc = mg.Juncao().get_by_hash(juncao_hash)
+        data = arruma_juncao(jc.cliente.data)
+
+        return True, data
+    except:
+        return False, {}
+
 def get_list_juncao(experimento_hash):
     try:
         ex = mg.Experimento().get_by_hash(experimento_hash)
@@ -159,22 +298,23 @@ def get_list_juncao(experimento_hash):
         jc = mg.Juncao().get_list_juncao_by_exp(ex)
         documentos = []
         for documento in jc.cliente.cursor:
-            documento["_id"] = str(documento["_id"])
-            documento["id_experimento"] = str(documento["id_experimento"])
-            documento["id_video"] = str(documento["id_video"])
-            r_tem_video = documento["id_video"] != ''
+            data = arruma_juncao(documento)
+            # documento["_id"] = str(documento["_id"])
+            # documento["id_experimento"] = str(documento["id_experimento"])
+            # documento["id_video"] = str(documento["id_video"])
+            # r_tem_video = documento["id_video"] != ''
 
-            if(r_tem_video):
-                vi = mg.Video().get_by_hash(documento["id_video"])
-                documento["video_data"] = vi.cliente.data
-                documento["video_data"]["_id"] = str(documento["video_data"]["_id"])
-            else:
-                documento["video_data"] = {}
+            # if(r_tem_video):
+            #     vi = mg.Video().get_by_hash(documento["id_video"])
+            #     documento["video_data"] = vi.cliente.data
+            #     documento["video_data"]["_id"] = str(documento["video_data"]["_id"])
+            # else:
+            #     documento["video_data"] = {}
 
-            documento["id_eto"] = str(documento["id_eto"])
-            documento["id_tra"] = str(documento["id_tra"])
+            # documento["id_eto"] = str(documento["id_eto"])
+            # documento["id_tra"] = str(documento["id_tra"])
             
-            documentos.append(documento)
+            documentos.append(data)
             
         return True, documentos
 

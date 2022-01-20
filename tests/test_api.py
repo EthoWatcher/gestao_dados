@@ -82,22 +82,22 @@ def test_create_juncao():
 def test_up_juncao_eto():
     path_etoxml = "./tests/examples/1e3z1h4.etoxml"
     xml_text = par.parser_xml_file_as_text(path_etoxml)
-    api.update_juncao("61df0b4c3915224806eb3728",xml_text, r_eto=True)
+    api.update_juncao("61df0b4c3915224806eb3728", xml_text, r_eto=True)
     
 def test_up_juncao_video():
     path_video = "./tests/examples/1e3z1h4.vxml"
     xml_text = par.parser_xml_file_as_text(path_video)
-    api.update_juncao("61df0b4c3915224806eb3728",xml_text, r_video=True)
+    api.update_juncao("61df0b4c3915224806eb3728", xml_text, r_video=True)
 
 
 def test_up_juncao_ras():
     path_ras = "./tests/examples/1e3z1h4.tkin"
     xml_text = par.parser_xml_file_as_text(path_ras)
-    api.update_juncao("61df0b4c3915224806eb3728",xml_text, r_rast=True)
+    api.update_juncao("61df0b4c3915224806eb3728", xml_text, r_rast=True)
 
 def test_up_juncao_var_ind():
     xml_text = {"sexo":"femea"}
-    api.update_juncao("61df0b4c3915224806eb3728",xml_text)
+    api.update_juncao("61df0b4c3915224806eb3728", xml_text)
 
 
 
