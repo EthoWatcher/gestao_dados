@@ -18,6 +18,8 @@ Essa biblioteca precisa de algumas expansões para ser usada dentro de um sistem
 
 # Comandos para fazer um novo pacote
 
+python 3.6.13
+
 ```
 python3 setup.py sdist bdist_wheel
 ```

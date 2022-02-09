@@ -1,5 +1,7 @@
-numpy==1.16.2
-pymongo==3.7.2
-scipy==1.4.1
-pandas==0.25.0
+docopt==0.6.2
+numpy==1.19.5
+opencv_python==4.5.5.62
+pandas==1.1.5
+pymongo==4.0.1
+setuptools==58.0.4
 xmltodict==0.12.0
